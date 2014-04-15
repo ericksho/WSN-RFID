@@ -1,0 +1,1 @@
+C:\Users\Tomas\Documents\GitHub\WSN-RFID\C#\WSN_RFID_READER\WSN_RFID_READER\bin\Debug\WSN_RFID_READER.exe.config
