@@ -1,0 +1,16 @@
+C:\Users\Ignacio Carmach\Dropbox\Desarrollo de Software\rfid activos\saat-520-english\reader api interface development kit\API Functions Calling Programme\C#\Source Code\CSharpRFIDDemo\bin\CSharpRFIDDemo.exe
+C:\Users\Ignacio Carmach\Dropbox\Desarrollo de Software\rfid activos\saat-520-english\reader api interface development kit\API Functions Calling Programme\C#\Source Code\CSharpRFIDDemo\bin\CSharpRFIDDemo.pdb
+C:\Users\Ignacio Carmach\Dropbox\Desarrollo de Software\rfid activos\saat-520-english\reader api interface development kit\API Functions Calling Programme\C#\Source Code\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.csprojResolveAssemblyReference.cache
+C:\Users\Ignacio Carmach\Dropbox\Desarrollo de Software\rfid activos\saat-520-english\reader api interface development kit\API Functions Calling Programme\C#\Source Code\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.frmMain.resources
+C:\Users\Ignacio Carmach\Dropbox\Desarrollo de Software\rfid activos\saat-520-english\reader api interface development kit\API Functions Calling Programme\C#\Source Code\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.Properties.Resources.resources
+C:\Users\Ignacio Carmach\Dropbox\Desarrollo de Software\rfid activos\saat-520-english\reader api interface development kit\API Functions Calling Programme\C#\Source Code\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.csproj.GenerateResource.Cache
+C:\Users\Ignacio Carmach\Dropbox\Desarrollo de Software\rfid activos\saat-520-english\reader api interface development kit\API Functions Calling Programme\C#\Source Code\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.exe
+C:\Users\Ignacio Carmach\Dropbox\Desarrollo de Software\rfid activos\saat-520-english\reader api interface development kit\API Functions Calling Programme\C#\Source Code\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.pdb
+C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.exe
+C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.pdb
+C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\bin\CSharpRFIDDemo.exe
+C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\bin\CSharpRFIDDemo.pdb
+C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.csprojResolveAssemblyReference.cache
+C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.frmMain.resources
+C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.Properties.Resources.resources
+C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.csproj.GenerateResource.Cache
