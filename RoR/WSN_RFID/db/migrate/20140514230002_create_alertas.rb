@@ -1,6 +1,6 @@
-class CreateAlerta < ActiveRecord::Migration
+class CreateAlertas < ActiveRecord::Migration
   def change
-    create_table :alerta do |t|
+    create_table :alertas do |t|
       t.boolean :desconectada
 
       t.timestamps

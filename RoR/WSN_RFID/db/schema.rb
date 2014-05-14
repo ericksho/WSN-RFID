@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513221003) do
+ActiveRecord::Schema.define(version: 20140514230036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "alerta", force: true do |t|
+  create_table "alertas", force: true do |t|
     t.boolean  "desconectada"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(version: 20140513221003) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "permisos_usuarios", id: false, force: true do |t|
+    t.integer "permiso_id"
+    t.integer "usuario_id"
+  end
+
+  add_index "permisos_usuarios", ["permiso_id", "usuario_id"], name: "index_permisos_usuarios_on_permiso_id_and_usuario_id", unique: true, using: :btree
 
   create_table "tipos", force: true do |t|
     t.string   "valor"

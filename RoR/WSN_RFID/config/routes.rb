@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
 
-  resources :tipos
+  resources :alertas
 
-  resources :alerta
+  resources :tipos
 
   resources :permisos
 
