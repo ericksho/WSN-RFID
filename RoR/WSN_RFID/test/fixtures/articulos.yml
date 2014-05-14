@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rfid: 1
+  estado: false
+
+two:
+  rfid: 1
+  estado: false

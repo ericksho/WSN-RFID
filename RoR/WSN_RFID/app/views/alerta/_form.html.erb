@@ -1,0 +1,21 @@
+<%= form_for(@alertum) do |f| %>
+  <% if @alertum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alertum.errors.count, "error") %> prohibited this alertum from being saved:</h2>
+
+      <ul>
+      <% @alertum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :desconectada %><br>
+    <%= f.check_box :desconectada %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

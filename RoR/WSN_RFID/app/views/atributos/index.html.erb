@@ -1,0 +1,29 @@
+<h1>Listing atributos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre at</th>
+      <th>Valor</th>
+      <th>Tipo variable</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atributos.each do |atributo| %>
+      <tr>
+        <td><%= atributo.nombre_at %></td>
+        <td><%= atributo.valor %></td>
+        <td><%= atributo.tipo_variable %></td>
+        <td><%= link_to 'Show', atributo %></td>
+        <td><%= link_to 'Edit', edit_atributo_path(atributo) %></td>
+        <td><%= link_to 'Destroy', atributo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atributo', new_atributo_path %>

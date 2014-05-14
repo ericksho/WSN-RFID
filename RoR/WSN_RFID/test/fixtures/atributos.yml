@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_at: MyString
+  valor: MyString
+  tipo_variable: MyString
+
+two:
+  nombre_at: MyString
+  valor: MyString
+  tipo_variable: MyString

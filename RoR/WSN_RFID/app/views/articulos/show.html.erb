@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rfid:</strong>
+  <%= @articulo.rfid %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @articulo.estado %>
+</p>
+
+<%= link_to 'Edit', edit_articulo_path(@articulo) %> |
+<%= link_to 'Back', articulos_path %>

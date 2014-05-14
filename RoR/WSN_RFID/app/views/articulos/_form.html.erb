@@ -1,0 +1,25 @@
+<%= form_for(@articulo) do |f| %>
+  <% if @articulo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@articulo.errors.count, "error") %> prohibited this articulo from being saved:</h2>
+
+      <ul>
+      <% @articulo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rfid %><br>
+    <%= f.number_field :rfid %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.check_box :estado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

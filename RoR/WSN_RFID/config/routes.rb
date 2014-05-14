@@ -1,9 +1,29 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  resources :tipos
+
+  resources :alerta
+
+  resources :permisos
+
+  resources :usuarios
+
+  resources :paquetes
+
+  resources :atributos
+
+  resources :lectors
+
+  resources :lecturas
+
+  resources :articulos
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

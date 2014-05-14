@@ -1,0 +1,2 @@
+module AtributosHelper
+end

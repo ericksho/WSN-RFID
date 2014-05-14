@@ -1,0 +1,21 @@
+<%= form_for(@lectura) do |f| %>
+  <% if @lectura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lectura.errors.count, "error") %> prohibited this lectura from being saved:</h2>
+
+      <ul>
+      <% @lectura.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
