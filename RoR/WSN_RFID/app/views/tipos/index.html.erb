@@ -1,6 +1,6 @@
-<h1>Listing tipos</h1>
+<h1>Tipos</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Valor</th>
@@ -12,9 +12,9 @@
     <% @tipos.each do |tipo| %>
       <tr>
         <td><%= tipo.valor %></td>
-        <td><%= link_to 'Show', tipo %></td>
-        <td><%= link_to 'Edit', edit_tipo_path(tipo) %></td>
-        <td><%= link_to 'Destroy', tipo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', tipo %></td>
+        <td><%= link_to 'Editar', edit_tipo_path(tipo) %></td>
+        <td><%= link_to 'Eliminar', tipo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Tipo', new_tipo_path %>
+<%= link_to 'Nuevo Tipo', new_tipo_path %>

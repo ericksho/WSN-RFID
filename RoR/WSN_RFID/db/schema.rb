@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524152139) do
+ActiveRecord::Schema.define(version: 20140524165732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,14 +20,20 @@ ActiveRecord::Schema.define(version: 20140524152139) do
     t.boolean  "desconectada"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lectura_id"
   end
+
+  add_index "alertas", ["lectura_id"], name: "index_alertas_on_lectura_id", using: :btree
 
   create_table "articulos", force: true do |t|
     t.integer  "rfid"
     t.boolean  "estado"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tipo_id"
   end
+
+  add_index "articulos", ["tipo_id"], name: "index_articulos_on_tipo_id", using: :btree
 
   create_table "atributos", force: true do |t|
     t.string   "nombre_at"
@@ -35,7 +41,10 @@ ActiveRecord::Schema.define(version: 20140524152139) do
     t.string   "tipo_variable"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "articulo_id"
   end
+
+  add_index "atributos", ["articulo_id"], name: "index_atributos_on_articulo_id", using: :btree
 
   create_table "lectors", force: true do |t|
     t.string   "posicion"
@@ -47,7 +56,12 @@ ActiveRecord::Schema.define(version: 20140524152139) do
     t.datetime "fecha"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "articulo_id"
+    t.integer  "lector_id"
   end
+
+  add_index "lecturas", ["articulo_id"], name: "index_lecturas_on_articulo_id", using: :btree
+  add_index "lecturas", ["lector_id"], name: "index_lecturas_on_lector_id", using: :btree
 
   create_table "paquetes", force: true do |t|
     t.string   "nombre"
