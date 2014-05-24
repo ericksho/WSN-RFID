@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :personas
+
+  resources :vehiculos
+
   get 'sessions/new'
 
   get 'sessions/create'
@@ -8,8 +12,6 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :alertas
-
-  resources :tipos
 
   resources :permisos
 

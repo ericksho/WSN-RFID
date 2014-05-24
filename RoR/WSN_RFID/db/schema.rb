@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524165732) do
+ActiveRecord::Schema.define(version: 20140524195226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,8 +84,14 @@ ActiveRecord::Schema.define(version: 20140524165732) do
 
   add_index "permisos_usuarios", ["permiso_id", "usuario_id"], name: "index_permisos_usuarios_on_permiso_id_and_usuario_id", unique: true, using: :btree
 
-  create_table "tipos", force: true do |t|
-    t.string   "valor"
+  create_table "personas", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "rut"
+    t.string   "email"
+    t.integer  "celular"
+    t.date     "fecha_nacimiento"
+    t.string   "cargo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,6 +102,27 @@ ActiveRecord::Schema.define(version: 20140524165732) do
     t.string   "email"
     t.string   "nombre"
     t.string   "apellido"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vehiculos", force: true do |t|
+    t.string   "patente"
+    t.string   "marca"
+    t.string   "modelo"
+    t.integer  "anho"
+    t.string   "color"
+    t.string   "chasis"
+    t.string   "n_motor"
+    t.integer  "kilometraje"
+    t.string   "tipo_combustible"
+    t.boolean  "es_4x4"
+    t.string   "categoria"
+    t.integer  "n_puertas"
+    t.boolean  "a_c"
+    t.boolean  "gps"
+    t.boolean  "disponible"
+    t.integer  "costo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

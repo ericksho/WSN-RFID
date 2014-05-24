@@ -69,6 +69,6 @@ class PaquetesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paquete_params
-      params.require(:paquete).permit(:nombre, :valores_dez, :tipo)
+      params.require(:paquete).permit(:nombre, :valores_dez)
     end
 end

@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patente:</strong>
+  <%= @vehiculo.patente %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @vehiculo.marca %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @vehiculo.modelo %>
+</p>
+
+<p>
+  <strong>Anho:</strong>
+  <%= @vehiculo.anho %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @vehiculo.color %>
+</p>
+
+<p>
+  <strong>Chasis:</strong>
+  <%= @vehiculo.chasis %>
+</p>
+
+<p>
+  <strong>N motor:</strong>
+  <%= @vehiculo.n_motor %>
+</p>
+
+<p>
+  <strong>Kilometraje:</strong>
+  <%= @vehiculo.kilometraje %>
+</p>
+
+<p>
+  <strong>Tipo combustible:</strong>
+  <%= @vehiculo.tipo_combustible %>
+</p>
+
+<p>
+  <strong>Es 4x4:</strong>
+  <%= @vehiculo.es_4x4 %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @vehiculo.categoria %>
+</p>
+
+<p>
+  <strong>N puertas:</strong>
+  <%= @vehiculo.n_puertas %>
+</p>
+
+<p>
+  <strong>A c:</strong>
+  <%= @vehiculo.a_c %>
+</p>
+
+<p>
+  <strong>Gps:</strong>
+  <%= @vehiculo.gps %>
+</p>
+
+<p>
+  <strong>Disponible:</strong>
+  <%= @vehiculo.disponible %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @vehiculo.costo %>
+</p>
+
+<%= link_to 'Edit', edit_vehiculo_path(@vehiculo) %> |
+<%= link_to 'Back', vehiculos_path %>

@@ -15,10 +15,7 @@
     <%= f.label :rfid %><br>
     <%= f.number_field :rfid %>
   </div>
-  <div class="field">
-    <% f.label :tipo %><br>
-    <%= collection_select(:articulo, :tipo_id, Tipo.all, :id, :valor, :prompt => 'Seleccione un articulo', :selected => @selected)%>
-  </div>
+
   <div class="field"> 
     <% f.label :estado %><br>
     <%=  f.hidden_field :estado, :value => true %>

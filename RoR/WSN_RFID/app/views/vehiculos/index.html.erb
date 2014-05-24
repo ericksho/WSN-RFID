@@ -1,0 +1,55 @@
+<h1>Listing vehiculos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patente</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Anho</th>
+      <th>Color</th>
+      <th>Chasis</th>
+      <th>N motor</th>
+      <th>Kilometraje</th>
+      <th>Tipo combustible</th>
+      <th>Es 4x4</th>
+      <th>Categoria</th>
+      <th>N puertas</th>
+      <th>A c</th>
+      <th>Gps</th>
+      <th>Disponible</th>
+      <th>Costo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehiculos.each do |vehiculo| %>
+      <tr>
+        <td><%= vehiculo.patente %></td>
+        <td><%= vehiculo.marca %></td>
+        <td><%= vehiculo.modelo %></td>
+        <td><%= vehiculo.anho %></td>
+        <td><%= vehiculo.color %></td>
+        <td><%= vehiculo.chasis %></td>
+        <td><%= vehiculo.n_motor %></td>
+        <td><%= vehiculo.kilometraje %></td>
+        <td><%= vehiculo.tipo_combustible %></td>
+        <td><%= vehiculo.es_4x4 %></td>
+        <td><%= vehiculo.categoria %></td>
+        <td><%= vehiculo.n_puertas %></td>
+        <td><%= vehiculo.a_c %></td>
+        <td><%= vehiculo.gps %></td>
+        <td><%= vehiculo.disponible %></td>
+        <td><%= vehiculo.costo %></td>
+        <td><%= link_to 'Show', vehiculo %></td>
+        <td><%= link_to 'Edit', edit_vehiculo_path(vehiculo) %></td>
+        <td><%= link_to 'Destroy', vehiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehiculo', new_vehiculo_path %>

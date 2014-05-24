@@ -19,7 +19,7 @@ class ArticulosController < ApplicationController
 
   # GET /articulos/1/edit
   def edit
-    @selected = @articulo.tipo_id
+    
   end
 
   # POST /articulos
@@ -70,6 +70,6 @@ class ArticulosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def articulo_params
-      params.require(:articulo).permit(:rfid, :estado, :tipo_id)
+      params.require(:articulo).permit(:rfid, :estado)
     end
 end

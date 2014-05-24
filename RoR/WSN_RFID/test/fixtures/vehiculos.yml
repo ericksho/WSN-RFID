@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patente: MyString
+  marca: MyString
+  modelo: MyString
+  anho: 1
+  color: 
+  chasis: MyString
+  n_motor: MyString
+  kilometraje: 1
+  tipo_combustible: MyString
+  es_4x4: false
+  categoria: MyString
+  n_puertas: 1
+  a_c: false
+  gps: false
+  disponible: false
+  costo: 1
+
+two:
+  patente: MyString
+  marca: MyString
+  modelo: MyString
+  anho: 1
+  color: 
+  chasis: MyString
+  n_motor: MyString
+  kilometraje: 1
+  tipo_combustible: MyString
+  es_4x4: false
+  categoria: MyString
+  n_puertas: 1
+  a_c: false
+  gps: false
+  disponible: false
+  costo: 1

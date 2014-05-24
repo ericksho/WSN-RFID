@@ -23,6 +23,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'lectura', 'lecturas'
   inflect.irregular 'paquete', 'paquetes'
   inflect.irregular 'permiso', 'permisos'
-  inflect.irregular 'tipo', 'tipos'
   inflect.irregular 'usuario', 'usuarios'
 end
