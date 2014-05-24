@@ -30,10 +30,7 @@ ActiveRecord::Schema.define(version: 20140524195226) do
     t.boolean  "estado"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tipo_id"
   end
-
-  add_index "articulos", ["tipo_id"], name: "index_articulos_on_tipo_id", using: :btree
 
   create_table "atributos", force: true do |t|
     t.string   "nombre_at"
