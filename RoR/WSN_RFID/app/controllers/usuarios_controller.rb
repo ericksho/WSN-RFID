@@ -1,6 +1,8 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :require_login
 
+  
   # GET /usuarios
   # GET /usuarios.json
   def index
@@ -69,6 +71,6 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:status, :password, :email, :nombre, :apellido)
+      params.require(:usuario).permit(:status, :password, :email, :nombre, :apellido, :password_confirmation)
     end
 end

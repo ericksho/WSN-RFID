@@ -1,0 +1,14 @@
+<div class="center">
+<% if alert %>
+  <div class="alert">
+    <%= alert %>
+  </div>
+<% end -%>
+
+<div id="login-form">
+	<%= form_for :session, :html => {:class => "form-signin"}, url: session_path do |f| -%>
+	    <%= f.text_field :email, :class => "form-control", :placeholder => "Correo", value: params[:session].try(:[], :email) %>
+	    <%= f.password_field :password, :class => "form-control", :placeholder => 'Contraseña' %>
+	    <%= f.submit "Ingresar" ,:class=>"btn btn-lg btn-primary btn-block" %>
+	<% end -%>
+</div>

@@ -1,0 +1,52 @@
+<div class="form-wrapper">
+<%= form_for (@usuario), :html => {:class => 'form-horizontal'} do |f| %>
+
+  <% if @usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @usuario.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+      
+      <div class="form-group">
+        <%= f.label 'Nombre:', :class => "col-lg-4 control-label" %>
+        <div class="col-lg-8">
+          <%= f.text_field :nombre, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Apellido:', :class => "col-lg-4 control-label" %>
+        <div class="col-lg-8">
+          <%= f.text_field :apellido, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Correo:', :class => "col-lg-4 control-label" %>
+        <div class="col-lg-8">
+          <%= f.text_field :email, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Contraseña:', :class => "col-lg-4 control-label" %>
+        <div class="col-lg-8">
+          <%= f.text_field :password, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Confirmar contraseña:', :class => "col-lg-4 control-label" %>
+        <div class="col-lg-8">
+          <%= f.text_field :password_confirmation, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+          <%= f.submit "Crear", :class => "btn btn-default" %>
+        </div>
+      </div>
+<% end %>
+</div>
