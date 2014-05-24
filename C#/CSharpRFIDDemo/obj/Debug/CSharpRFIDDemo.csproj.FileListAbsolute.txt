@@ -17,3 +17,12 @@ C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharp
 C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.Home.resources
 C:\Users\Tomas\Documents\GitHub\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.exe
 C:\Users\Tomas\Documents\GitHub\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.pdb
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.exe
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.pdb
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\bin\CSharpRFIDDemo.exe
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\bin\CSharpRFIDDemo.pdb
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.csprojResolveAssemblyReference.cache
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.frmMain.resources
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.Home.resources
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.Properties.Resources.resources
+D:\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.csproj.GenerateResource.Cache
