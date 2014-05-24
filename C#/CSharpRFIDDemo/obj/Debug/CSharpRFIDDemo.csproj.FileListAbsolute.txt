@@ -15,3 +15,5 @@ C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharp
 C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.Properties.Resources.resources
 C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.csproj.GenerateResource.Cache
 C:\Users\Ignacio Carmach\Desktop\Dev\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.Home.resources
+C:\Users\Tomas\Documents\GitHub\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.exe
+C:\Users\Tomas\Documents\GitHub\WSN-RFID\C#\CSharpRFIDDemo\obj\Debug\CSharpRFIDDemo.pdb
