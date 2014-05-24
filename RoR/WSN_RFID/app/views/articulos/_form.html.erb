@@ -16,6 +16,16 @@
     <%= f.number_field :rfid %>
   </div>
 
+  <div class="field">
+    <%= f.label :persona %><br>
+    <%= collection_select(:articulo, :persona_id, Persona.all, :id, :rut, :prompt => 'Seleccione por rut', :selected => @persona_selected)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :vehiculo %><br>
+    <%= collection_select(:articulo, :vehiculo_id, Vehiculo.all, :id, :patente, :prompt => 'Seleccione por patente', :selected => @vehiculo_selected)%>
+  </div>
+
   <div class="field"> 
     <% f.label :estado %><br>
     <%=  f.hidden_field :estado, :value => true %>

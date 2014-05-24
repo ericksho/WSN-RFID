@@ -10,6 +10,8 @@ class ArticulosController < ApplicationController
   # GET /articulos/1
   # GET /articulos/1.json
   def show
+    @persona = Persona.find_by_id(@articulo.persona_id)
+    @vehiculo = Persona.find_by_id(@articulo.vehiculo_id)
   end
 
   # GET /articulos/new
@@ -19,7 +21,8 @@ class ArticulosController < ApplicationController
 
   # GET /articulos/1/edit
   def edit
-    
+    @persona_selected = @articulo.persona_id
+    @vehiculo_selected = @articulo.vehiculo_id
   end
 
   # POST /articulos
@@ -70,6 +73,6 @@ class ArticulosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def articulo_params
-      params.require(:articulo).permit(:rfid, :estado)
+      params.require(:articulo).permit(:rfid, :estado,:vehiculo_id,:persona_id)
     end
 end

@@ -5,10 +5,21 @@
   <%= @articulo.rfid %>
 </p>
 
+<%if !@persona.nil? %>
 <p>
-  <strong>Estado:</strong>
-  <%= @articulo.estado %>
+  <strong>Persona Asociada:</strong>
+  <%= @persona.nombre + ' ' + @persona.apellido%>
+  <%= link_to 'Ver mas', @persona %>
 </p>
+<%end%>
+
+<%if !@vehiculo.nil? %>
+<p>
+  <strong>Vehiculo Asociado:</strong>
+  <%= @vehiculo.patente%>
+  <%= link_to 'Ver mas', @vehiculo %>
+</p>
+<%end%>
 
 <%= link_to 'Editar', edit_articulo_path(@articulo) %> |
 <%= link_to 'Volver', articulos_path %>

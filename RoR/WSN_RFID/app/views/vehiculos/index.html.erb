@@ -1,21 +1,21 @@
-<h1>Listing vehiculos</h1>
+<h1>Listado vehiculos</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Patente</th>
       <th>Marca</th>
       <th>Modelo</th>
-      <th>Anho</th>
+      <th>Año</th>
       <th>Color</th>
       <th>Chasis</th>
-      <th>N motor</th>
+      <th>Numero motor</th>
       <th>Kilometraje</th>
       <th>Tipo combustible</th>
-      <th>Es 4x4</th>
+      <th>4x4</th>
       <th>Categoria</th>
-      <th>N puertas</th>
-      <th>A c</th>
+      <th>Numero de puertas</th>
+      <th>A/C</th>
       <th>Gps</th>
       <th>Disponible</th>
       <th>Costo</th>
@@ -42,9 +42,9 @@
         <td><%= vehiculo.gps %></td>
         <td><%= vehiculo.disponible %></td>
         <td><%= vehiculo.costo %></td>
-        <td><%= link_to 'Show', vehiculo %></td>
-        <td><%= link_to 'Edit', edit_vehiculo_path(vehiculo) %></td>
-        <td><%= link_to 'Destroy', vehiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', vehiculo %></td>
+        <td><%= link_to 'Editar', edit_vehiculo_path(vehiculo) %></td>
+        <td><%= link_to 'Eliminar', vehiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -52,4 +52,4 @@
 
 <br>
 
-<%= link_to 'New Vehiculo', new_vehiculo_path %>
+<%= link_to 'Nuevo Vehiculo', new_vehiculo_path %>
