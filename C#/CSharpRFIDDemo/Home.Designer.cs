@@ -34,7 +34,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CSharpRFIDDemo.Properties.Resources.connectionOk;
+            this.pictureBox1.Image = global::CSharpRFIDDemo.Properties.Resources.connectionOk1;
             this.pictureBox1.Location = new System.Drawing.Point(40, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(201, 201);

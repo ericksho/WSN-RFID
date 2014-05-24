@@ -63,9 +63,29 @@ namespace CSharpRFIDDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap connectionNo {
+            get {
+                object obj = ResourceManager.GetObject("connectionNo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap connectionOk {
             get {
                 object obj = ResourceManager.GetObject("connectionOk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap connectionOk1 {
+            get {
+                object obj = ResourceManager.GetObject("connectionOk1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
