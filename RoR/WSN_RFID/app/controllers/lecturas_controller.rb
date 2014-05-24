@@ -1,5 +1,6 @@
 class LecturasController < ApplicationController
   before_action :set_lectura, only: [:show, :edit, :update, :destroy, :createPost]
+  skip_before_filter :require_login, only: [:createPost]
   protect_from_forgery :except => :createPost
   # GET /lecturas
   # GET /lecturas.json
@@ -82,7 +83,7 @@ class LecturasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lectura
-      @lectura = Lectura.find(params[:id])
+      @lectura = Lectura.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
