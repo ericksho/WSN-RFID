@@ -5,7 +5,7 @@ class LecturasController < ApplicationController
   # GET /lecturas
   # GET /lecturas.json
   def index
-    @lecturas = Lectura.all
+    @lecturas = Lectura.all.order("fecha desc")
   end
 
   # GET /lecturas/1
