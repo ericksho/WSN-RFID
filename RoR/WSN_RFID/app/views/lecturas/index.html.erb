@@ -1,9 +1,11 @@
-<h1>Listing lecturas</h1>
+<h1>Lecturas</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Fecha</th>
+      <th>Id del articulo leido</th>
+      <th>id del lector</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +14,11 @@
     <% @lecturas.each do |lectura| %>
       <tr>
         <td><%= lectura.fecha %></td>
+        <td><%= lectura.articulo_id %></td>
+        <td><%= lectura.lector_id %></td>
         <td><%= link_to 'Ver', lectura %></td>
         <td><%= link_to 'Editar', edit_lectura_path(lectura) %></td>
-        <td><%= link_to 'Destroy', lectura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', lectura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Lectura', new_lectura_path %>
+<%= link_to 'Nueva Lectura', new_lectura_path %>

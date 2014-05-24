@@ -1,10 +1,11 @@
 class LecturasController < ApplicationController
-  before_action :set_lectura, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_lectura, only: [:show, :edit, :update, :destroy, :createPost]
+  skip_before_filter :require_login, only: [:createPost]
+  protect_from_forgery :except => :createPost
   # GET /lecturas
   # GET /lecturas.json
   def index
-    @lecturas = Lectura.all
+    @lecturas = Lectura.all.order("fecha desc")
   end
 
   # GET /lecturas/1
@@ -19,6 +20,24 @@ class LecturasController < ApplicationController
 
   # GET /lecturas/1/edit
   def edit
+  end
+
+  # POST
+  # POST /lecturas.json
+  def createPost
+    #ApiKey
+
+    @lectura = Lectura.new(fecha: params[:ReadTime], articulo_id: params[:Code], lector_id: params[:ReaderId])
+
+    respond_to do |format|
+      if @lectura.save
+        format.html { redirect_to @lectura, notice: 'Lectura was successfully created.' }
+        format.json { render :show, status: :created, location: @lectura }
+      else
+        format.html { render :new }
+        format.json { render json: @lectura.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # POST /lecturas
@@ -64,7 +83,7 @@ class LecturasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lectura
-      @lectura = Lectura.find(params[:id])
+      @lectura = Lectura.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

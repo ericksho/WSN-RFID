@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  match 'readReport' => "lecturas#createPost", via: [:post, :get]
+
   resources :alertas
 
   resources :permisos
