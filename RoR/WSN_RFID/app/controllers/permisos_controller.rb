@@ -15,10 +15,12 @@ class PermisosController < ApplicationController
   # GET /permisos/new
   def new
     @permiso = Permiso.new
+    @label = "Crear"
   end
 
   # GET /permisos/1/edit
   def edit
+    @label = "Actualizar"
   end
 
   # POST /permisos
@@ -69,6 +71,6 @@ class PermisosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def permiso_params
-      params.require(:permiso).permit(:titulo)
+      params.require(:permiso).permit(:titulo, :acceso_articulo, :acceso_alerta, :acceso_lectura, :acceso_lector ,:acceso_paquete, :acceso_usuario, :acceso_permiso, :acceso_alerta, :acceso_vehiculo, :acceso_persona, :acceso_atributo )
     end
 end

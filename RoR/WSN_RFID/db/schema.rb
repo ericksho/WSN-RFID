@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524205848) do
+ActiveRecord::Schema.define(version: 20140524215343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(version: 20140524205848) do
     t.string   "titulo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "acceso_articulo"
+    t.boolean  "acceso_lectura"
+    t.boolean  "acceso_lector"
+    t.boolean  "acceso_paquete"
+    t.boolean  "acceso_usuario"
+    t.boolean  "acceso_permiso"
+    t.boolean  "acceso_alerta"
+    t.boolean  "acceso_vehiculo"
+    t.boolean  "acceso_persona"
+    t.boolean  "acceso_atributo"
   end
 
   create_table "permisos_usuarios", id: false, force: true do |t|

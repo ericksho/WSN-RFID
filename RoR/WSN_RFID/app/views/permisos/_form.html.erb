@@ -10,12 +10,55 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+<div class="form-wrapper">
+  <div class="form-group">
+    <%= f.label 'Titulo:', :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :titulo, :class => "form-control" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+      
+  <div id = "checkbox_1">
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_alerta %> Alerta
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_articulo %> Articulo
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_atributo %> Atributo
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_lector %> Lector
+    </label>
+  </div>
+  <div id="checkbox-2">
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_lectura %> Lectura
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_paquete %> Paquete
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_permiso %> Permiso
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_persona %> Persona
+    </label>
+  </div>
+  <div id="checkbox-3">
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_usuario %> Usuario
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :acceso_vehiculo %> Vehiculo
+    </label>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit @label, :class => "btn btn-default" %>
+    </div>
   </div>
 <% end %>
+</div>
