@@ -339,6 +339,8 @@ namespace CSharpRFIDDemo
         {
             int nRevMsgResult = 0;
 
+            ConnectionManager cm = new ConnectionManager("http://wsn-rfid.herokuapp.com", "ApiKey", 1);
+
             RevMsgStruct revMsg = new RevMsgStruct();
             int dwStart = System.Environment.TickCount;
             bool bConnectIsOK = false;
@@ -349,6 +351,7 @@ namespace CSharpRFIDDemo
                 {
                     bConnectIsOK = true;
                     revMsgLine.RevMsgAdd(revMsg);
+                    cm.SendReadReport(revMsg.sCodeData.ToString(), revMsg.tLastTime);
                     ShowResult(Win32.BeepType.Success);
                 }
                 else if (nRevMsgResult == 2)

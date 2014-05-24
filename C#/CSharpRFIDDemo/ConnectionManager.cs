@@ -19,17 +19,17 @@ namespace CSharpRFIDDemo
             this.ReaderId = ReaderId;
         }
 
-        public void SendReadReport(int Code, DateTime ReadTime)
+        public void SendReadReport(string Code, DateTime ReadTime)
         {
             using (var wb = new WebClient())
             {
                 var data = new NameValueCollection();
                 data["ApiKey"] = ApiKey;
                 data["ReaderId"] = ReaderId.ToString();
-                data["Code"] = Code.ToString();
+                data["Code"] = Code;
                 data["ReadTime"] = ReadTime.ToString();
 
-                Uri address = new Uri(HostAddress + "\\ReadReport");
+                Uri address = new Uri(HostAddress + "/ReadReport");
 
                 bool send = false;
 
