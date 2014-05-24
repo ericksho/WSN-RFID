@@ -16,8 +16,8 @@
         <td><%= paquete.nombre %></td>
         <td><%= paquete.valores_dez %></td>
         <td><%= paquete.tipo %></td>
-        <td><%= link_to 'Show', paquete %></td>
-        <td><%= link_to 'Edit', edit_paquete_path(paquete) %></td>
+        <td><%= link_to 'Ver', paquete %></td>
+        <td><%= link_to 'Editar', edit_paquete_path(paquete) %></td>
         <td><%= link_to 'Destroy', paquete, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -20,8 +20,8 @@
         <td><%= usuario.email %></td>
         <td><%= usuario.nombre %></td>
         <td><%= usuario.apellido %></td>
-        <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
+        <td><%= link_to 'Ver', usuario %></td>
+        <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
         <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

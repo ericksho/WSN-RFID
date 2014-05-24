@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <% f.label :tipo %><br>
-    <%= collection_select(:articulo, :tipo_id, Tipo.all, :id, :valor, :prompt => 'Seleccione un articulo')%>
+    <%= collection_select(:articulo, :tipo_id, Tipo.all, :id, :valor, :prompt => 'Seleccione un articulo', :selected => @selected)%>
   </div>
   <div class="field"> 
     <% f.label :estado %><br>
