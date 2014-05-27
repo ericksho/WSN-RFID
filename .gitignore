@@ -45,3 +45,7 @@ C#/CSharpRFIDDemo/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 C#/CSharpRFIDDemo/bin/CSharpRFIDDemo.vshost.exe.manifest
 C#/CSharpRFIDDemo/obj/Debug/CSharpRFIDDemo.csproj.FileListAbsolute.txt
 C#/CSharpRFIDDemo/obj/Debug/CSharpRFIDDemo.csproj.FileListAbsolute.txt
+
+# Mac files
+.DS_Store
+
