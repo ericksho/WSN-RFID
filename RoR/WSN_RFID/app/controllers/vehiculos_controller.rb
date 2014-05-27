@@ -28,7 +28,7 @@ class VehiculosController < ApplicationController
 
     respond_to do |format|
       if @vehiculo.save
-        format.html { redirect_to @vehiculo, notice: 'Vehiculo was successfully created.' }
+        format.html { redirect_to vehiculos_path, notice: 'Vehiculo was successfully created.' }
         format.json { render :show, status: :created, location: @vehiculo }
       else
         format.html { render :new }

@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :Año %><br>
-    <%= f.number_field :anho %>
+    <%= f.number_field(:anho, :in => 1980..2014, :value => 2014) %>
   </div>
   <div class="field">
     <%= f.label :color %><br>
@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :tipo_combustible %><br>
-    <%= f.text_field :tipo_combustible %>
+    <%= f.select(:tipo_combustible, options_for_select([93,95,97])) %>
   </div>
   <div class="field">
     <%= f.label "4x4" %><br>
@@ -53,7 +53,7 @@
   </div>
   <div class="field">
     <%= f.label :categoria %><br>
-    <%= f.text_field :categoria %>
+    <%= f.select(:categoria, options_for_select(["Sedan", "SUV", "HatchBack", "Jeep", "Lujo"])) %>
   </div>
   <div class="field">
     <%= f.label "Numero de puertas" %><br>
@@ -72,7 +72,7 @@
     <%= f.check_box :disponible %>
   </div>
   <div class="field">
-    <%= f.label :costo %><br>
+    <%= f.label(:costo, "Costo diario") %><br>
     <%= f.number_field :costo %>
   </div>
   <div class="actions">

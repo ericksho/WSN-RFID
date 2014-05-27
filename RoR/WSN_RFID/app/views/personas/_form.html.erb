@@ -33,11 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :fecha_nacimiento %><br>
-    <%= f.date_select :fecha_nacimiento %>
+    <%= f.date_select(:fecha_nacimiento, :start_year => 1900, :end_year => Date.current.year) %>
   </div>
   <div class="field">
     <%= f.label :cargo %><br>
-    <%= f.text_field :cargo %>
+    <%= f.select(:cargo, options_for_select(["Jefe de Sucursal", "Vendedor", "Mecanico"])) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,6 +1,6 @@
 class LecturasController < ApplicationController
   before_action :set_lectura, only: [:show, :edit, :update, :destroy, :createPost]
-  skip_before_filter :require_login, only: [:createPost]
+  skip_before_filter :require_login, only: [:createPost, :set_lectura]
   protect_from_forgery :except => :createPost
   # GET /lecturas
   # GET /lecturas.json
@@ -31,7 +31,7 @@ class LecturasController < ApplicationController
 
     respond_to do |format|
       if @lectura.save
-        format.html { redirect_to @lectura, notice: 'Lectura was successfully created.' }
+        format.html { redirect_to lecturas_path, notice: 'Lectura was successfully created.' }
         format.json { render :show, status: :created, location: @lectura }
       else
         format.html { render :new }

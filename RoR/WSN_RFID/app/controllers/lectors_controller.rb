@@ -28,7 +28,7 @@ class LectorsController < ApplicationController
 
     respond_to do |format|
       if @lector.save
-        format.html { redirect_to @lector, notice: 'Lector was successfully created.' }
+        format.html { redirect_to lectors_path, notice: 'Lector was successfully created.' }
         format.json { render :show, status: :created, location: @lector }
       else
         format.html { render :new }

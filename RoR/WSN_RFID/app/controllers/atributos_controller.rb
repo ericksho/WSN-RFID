@@ -28,7 +28,7 @@ class AtributosController < ApplicationController
 
     respond_to do |format|
       if @atributo.save
-        format.html { redirect_to @atributo, notice: 'Atributo was successfully created.' }
+        format.html { redirect_to atributos_path, notice: 'Atributo was successfully created.' }
         format.json { render :show, status: :created, location: @atributo }
       else
         format.html { render :new }

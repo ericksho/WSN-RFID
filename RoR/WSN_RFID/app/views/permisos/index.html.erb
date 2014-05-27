@@ -19,16 +19,16 @@
     <% @permisos.each do |permiso| %>
       <tr>
          <td><%= permiso.titulo %></td>
-        <td><%= check_box('alerta',"0", {:checked => permiso.acceso_alerta}) %></td>
-        <td><%= check_box('articulo',"0", {:checked => permiso.acceso_articulo}) %></td>
-        <td><%= check_box('atributo',"0", {:checked => permiso.acceso_atributo}) %></td>
-        <td><%= check_box('lector',"0", {:checked => permiso.acceso_lector}) %></td>
-        <td><%= check_box('lectura',"0", {:checked => permiso.acceso_lectura}) %></td>
-        <td><%= check_box('paquete',"0", {:checked => permiso.acceso_paquete}) %></td>
-        <td><%= check_box('permiso',"0", {:checked => permiso.acceso_permiso}) %></td>
-        <td><%= check_box('persona',"0", {:checked => permiso.acceso_persona}) %></td>
-        <td><%= check_box('usuario',"0", {:checked => permiso.acceso_usuario}) %></td>
-        <td><%= check_box('vehiculo',"0", {:checked => permiso.acceso_vehiculo}) %></td>
+        <td><%= check_box('alerta',"0", {:checked => permiso.acceso_alerta, :disabled => true}) %></td>
+        <td><%= check_box('articulo',"0", {:checked => permiso.acceso_articulo, :disabled => true}) %></td>
+        <td><%= check_box('atributo',"0", {:checked => permiso.acceso_atributo, :disabled => true}) %></td>
+        <td><%= check_box('lector',"0", {:checked => permiso.acceso_lector, :disabled => true}) %></td>
+        <td><%= check_box('lectura',"0", {:checked => permiso.acceso_lectura, :disabled => true}) %></td>
+        <td><%= check_box('paquete',"0", {:checked => permiso.acceso_paquete, :disabled => true}) %></td>
+        <td><%= check_box('permiso',"0", {:checked => permiso.acceso_permiso, :disabled => true}) %></td>
+        <td><%= check_box('persona',"0", {:checked => permiso.acceso_persona, :disabled => true}) %></td>
+        <td><%= check_box('usuario',"0", {:checked => permiso.acceso_usuario, :disabled => true}) %></td>
+        <td><%= check_box('vehiculo',"0", {:checked => permiso.acceso_vehiculo, :disabled => true}) %></td>
         <td><%= link_to 'Ver', permiso %></td>
         <td><%= link_to 'Editar', edit_permiso_path(permiso) %></td>
         <td><%= link_to 'Destroy', permiso, method: :delete, data: { confirm: 'Are you sure?' } %></td>

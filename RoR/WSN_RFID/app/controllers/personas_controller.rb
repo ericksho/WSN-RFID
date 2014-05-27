@@ -28,7 +28,7 @@ class PersonasController < ApplicationController
 
     respond_to do |format|
       if @persona.save
-        format.html { redirect_to @persona, notice: 'Persona was successfully created.' }
+        format.html { redirect_to personas_path, notice: 'Persona was successfully created.' }
         format.json { render :show, status: :created, location: @persona }
       else
         format.html { render :new }

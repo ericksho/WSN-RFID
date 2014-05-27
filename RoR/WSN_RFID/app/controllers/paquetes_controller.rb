@@ -28,7 +28,7 @@ class PaquetesController < ApplicationController
 
     respond_to do |format|
       if @paquete.save
-        format.html { redirect_to @paquete, notice: 'Paquete was successfully created.' }
+        format.html { redirect_to paquetes_path, notice: 'Paquete was successfully created.' }
         format.json { render :show, status: :created, location: @paquete }
       else
         format.html { render :new }

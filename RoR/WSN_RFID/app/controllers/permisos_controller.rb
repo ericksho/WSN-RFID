@@ -30,7 +30,7 @@ class PermisosController < ApplicationController
 
     respond_to do |format|
       if @permiso.save
-        format.html { redirect_to @permiso, notice: 'Permiso was successfully created.' }
+        format.html { redirect_to permisos_path, notice: 'Permiso was successfully created.' }
         format.json { render :show, status: :created, location: @permiso }
       else
         format.html { render :new }

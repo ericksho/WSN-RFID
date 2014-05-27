@@ -11,7 +11,7 @@ class ArticulosController < ApplicationController
   # GET /articulos/1.json
   def show
     @persona = Persona.find_by_id(@articulo.persona_id)
-    @vehiculo = Persona.find_by_id(@articulo.vehiculo_id)
+    @vehiculo = Vehiculo.find_by_id(@articulo.vehiculo_id)
   end
 
   # GET /articulos/new
@@ -32,7 +32,7 @@ class ArticulosController < ApplicationController
 
     respond_to do |format|
       if @articulo.save
-        format.html { redirect_to @articulo, notice: 'Articulo was successfully created.' }
+        format.html { redirect_to articulos_path, notice: 'Articulo was successfully created.' }
         format.json { render :show, status: :created, location: @articulo }
       else
         format.html { render :new }
