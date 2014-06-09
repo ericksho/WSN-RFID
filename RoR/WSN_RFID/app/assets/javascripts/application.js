@@ -14,3 +14,33 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap
+//= require bootstrap-select
+//= require moment
+//= require bootstrap-datetimepicker
+//= require bootstrap-tokenfield
+
+$(document).on('page:load', DateTimePicker);
+$(document).on('page:load', ChangeSelectedMenu);
+
+$(function(){
+	DateTimePicker();
+	ChangeSelectedMenu;
+	});
+
+
+function DateTimePicker()
+{	 
+    $('.datepicker').datetimepicker({
+      pickTime: false
+    });
+    $(function () {
+	    $('.datetimepicker').datetimepicker();
+	    language: 'en'
+	});	 
+}
+
+function ChangeSelectedMenu()
+{
+ 
+}

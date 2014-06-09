@@ -11,11 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.datetime_select :fecha %>
+<div class="container">
+  <div class="col-md-6 column">
+    <form role="form">
+      <div class="form-group">
+          <div class="input-group date datetimepicker">
+              <%= f.text_field :fecha, :class => "form-control" %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+      </div>   
+      <%= f.submit @label, :class => "btn btn-default" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

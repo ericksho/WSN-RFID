@@ -15,10 +15,12 @@ class PaquetesController < ApplicationController
   # GET /paquetes/new
   def new
     @paquete = Paquete.new
+    @label = "Crear"
   end
 
   # GET /paquetes/1/edit
   def edit
+    @label = "Actualizar"
   end
 
   # POST /paquetes

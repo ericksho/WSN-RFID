@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+<div class="container">
+  <div class="col-md-6 column">
+    <form role="form">
+      <div class="form-group">
+         <%= f.label :nombre %> <%= f.text_field :nombre, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+         <%= f.label "Valores por defecto" %><%= f.text_field :valores_dez, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+         <%= f.label :tipo %> <%= f.text_field :tipo, :class => "form-control" %>
+      </div>
+      <%= f.submit @label, :class => "btn btn-default" %>
   </div>
-  <div class="field">
-    <%= f.label :valores_dez %><br>
-    <%= f.text_field :valores_dez %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

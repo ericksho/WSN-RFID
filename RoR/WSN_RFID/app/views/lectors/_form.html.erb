@@ -10,12 +10,14 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :posicion %><br>
-    <%= f.text_field :posicion %>
+  
+<div class="container">
+  <div class="col-md-6 column">
+    <form role="form">
+      <div class="form-group">
+         <%= f.label :posicion %> <%= f.text_field :posicion, :class => "form-control" %>
+      </div>
+      <%= f.submit @label, :class => "btn btn-default" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

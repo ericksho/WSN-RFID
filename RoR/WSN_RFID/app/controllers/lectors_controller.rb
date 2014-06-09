@@ -15,10 +15,12 @@ class LectorsController < ApplicationController
   # GET /lectors/new
   def new
     @lector = Lector.new
+    @label = "Crear"
   end
 
   # GET /lectors/1/edit
   def edit
+    @label = "Actualizar"
   end
 
   # POST /lectors

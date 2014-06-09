@@ -15,10 +15,12 @@ class AtributosController < ApplicationController
   # GET /atributos/new
   def new
     @atributo = Atributo.new
+    @label = "Crear"
   end
 
   # GET /atributos/1/edit
   def edit
+    @label = "Actualizar"
   end
 
   # POST /atributos

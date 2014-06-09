@@ -16,10 +16,12 @@ class LecturasController < ApplicationController
   # GET /lecturas/new
   def new
     @lectura = Lectura.new
+    @label = "Crear"
   end
 
   # GET /lecturas/1/edit
   def edit
+    @label = "Actualizar"
   end
 
   # POST

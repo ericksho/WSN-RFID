@@ -17,12 +17,14 @@ class ArticulosController < ApplicationController
   # GET /articulos/new
   def new
     @articulo = Articulo.new
+    @label = "Crear"
   end
 
   # GET /articulos/1/edit
   def edit
     @persona_selected = @articulo.persona_id
     @vehiculo_selected = @articulo.vehiculo_id
+    @label = "Actualizar"
   end
 
   # POST /articulos

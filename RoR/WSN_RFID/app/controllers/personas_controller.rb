@@ -15,10 +15,12 @@ class PersonasController < ApplicationController
   # GET /personas/new
   def new
     @persona = Persona.new
+    @label = "Crear"
   end
 
   # GET /personas/1/edit
   def edit
+    @label = "Actualizar"
   end
 
   # POST /personas

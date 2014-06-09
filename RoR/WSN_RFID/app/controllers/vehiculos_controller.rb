@@ -15,10 +15,12 @@ class VehiculosController < ApplicationController
   # GET /vehiculos/new
   def new
     @vehiculo = Vehiculo.new
+    @label = "Crear"
   end
 
   # GET /vehiculos/1/edit
   def edit
+    @label = "Actualizar"
   end
 
   # POST /vehiculos

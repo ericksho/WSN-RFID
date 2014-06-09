@@ -1,4 +1,3 @@
-<div class="form-wrapper">
 <%= form_for (@usuario), :html => {:class => 'form-horizontal'} do |f| %>
 
   <% if @usuario.errors.any? %>
@@ -13,45 +12,30 @@
     </div>
   <% end %>
       
+<div class="container">
+  <div class="col-md-6 column">
+    <form role="form">
       <div class="form-group">
-        <%= f.label 'Nombre:', :class => "col-lg-4 control-label" %>
-        <div class="col-lg-8">
-          <%= f.text_field :nombre, :class => "form-control" %>
-        </div>
+         <%= f.label :nombre %> <%= f.text_field :nombre, :class => "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label 'Apellido:', :class => "col-lg-4 control-label" %>
-        <div class="col-lg-8">
-          <%= f.text_field :apellido, :class => "form-control" %>
-        </div>
+         <%= f.label :apellido %><%= f.text_field :apellido, :class => "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label 'Correo:', :class => "col-lg-4 control-label" %>
-        <div class="col-lg-8">
-          <%= f.text_field :email, :class => "form-control" %>
-        </div>
+         <%= f.label :email %> <%= f.text_field :email, :class => "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label 'Contraseña:', :class => "col-lg-4 control-label" %>
-        <div class="col-lg-8">
-          <%= f.text_field :password, :class => "form-control" %>
-        </div>
+        <%= f.label "Contraseña" %> <%= f.password_field :password, :class => "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label 'Confirmar contraseña:', :class => "col-lg-4 control-label" %>
-        <div class="col-lg-8">
-          <%= f.text_field :password_confirmation, :class => "form-control" %>
+        <%= f.label "Confirmar Contraseña" %> <%= f.password_field :password_confirmation, :class => "form-control" %>
+      </div>
+      <div class="form-select">
+        <div class="form-group">
+          <%= f.label :cargo %><%= select("permiso_select", "id", Permiso.all.collect {|p| [ p.titulo, p.id ]}) %>
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-         
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-          <%= f.submit "Crear", :class => "btn btn-default" %>
-        </div>
-      </div>
-<% end %>
+      <%= f.submit @label, :class => "btn btn-default" %>
+  </div>
 </div>
+<% end %>

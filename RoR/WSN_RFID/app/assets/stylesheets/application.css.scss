@@ -10,9 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
+ *= require bootstrap-select
+ *= require bootstrap-tokenfield
+ *= require select2
  */
+
+@import "bootstrap";
+@import "bootstrap/theme";
+@import "bootstrap-datetimepicker";
 
 .form-wrapper
 {
@@ -25,4 +32,18 @@
 .form-wrapper input
 {
   float:right;
+}
+
+.form-select select
+{
+  display:block;
+  background: transparent;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border-style:solid;
+  border-width:1px;
+  border-radius: 5px;
+  border-color:lightgray;
+  height: 34px;
 }

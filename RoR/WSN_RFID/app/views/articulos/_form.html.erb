@@ -11,26 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :rfid %><br>
-    <%= f.number_field :rfid %>
+<div class="container">
+  <div class="col-md-6 column">
+    <form role="form">
+      <div class="form-group">
+         <%= f.label :rfid %> <%= f.number_field :rfid, :class => "form-control" %>
+      </div>
+      <div class="form-select">
+        <div class="form-group">
+          <%= f.label :cargo %><%= collection_select(:articulo, :persona_id, Persona.all, :id, :rut, :prompt => 'Seleccione por rut', :selected => @persona_selected,:class => "form-control") %>
+        </div>
+        <div class="form-group">
+          <%= f.label :cargo %><%= collection_select(:articulo, :vehiculo_id, Vehiculo.all, :id, :patente, :prompt => 'Seleccione por patente', :selected => @vehiculo_selected,:class => "form-control") %>
+        </div>
+         <div class="field"> 
+          <% f.label :estado %><br>
+          <%=  f.hidden_field :estado, :value => true %>
+        </div>
+        
+      </div>
+      <%= f.submit @label, :class => "btn btn-default" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :persona %><br>
-    <%= collection_select(:articulo, :persona_id, Persona.all, :id, :rut, :prompt => 'Seleccione por rut', :selected => @persona_selected)%>
-  </div>
 
-  <div class="field">
-    <%= f.label :vehiculo %><br>
-    <%= collection_select(:articulo, :vehiculo_id, Vehiculo.all, :id, :patente, :prompt => 'Seleccione por patente', :selected => @vehiculo_selected)%>
-  </div>
 
-  <div class="field"> 
-    <% f.label :estado %><br>
-    <%=  f.hidden_field :estado, :value => true %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
