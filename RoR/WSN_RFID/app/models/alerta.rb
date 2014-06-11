@@ -22,7 +22,8 @@ class Alerta < ActiveRecord::Base
 
 			if(!lectura.lector.nil?)
 				msg += 'en el lector ' + lectura.lector.posicion.to_s + ' '
-			end				
+			end			
+		end	
 
 
 		devices.each  do |device|
