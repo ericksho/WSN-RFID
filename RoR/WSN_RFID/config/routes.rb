@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  post 'vehiculos/index', as: 'filterVehiculos'
+
   match 'readReport' => "lecturas#createPost", via: [:post, :get]
 
   resources :alertas

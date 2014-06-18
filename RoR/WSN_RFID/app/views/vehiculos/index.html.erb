@@ -1,3 +1,72 @@
+
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        <strong>Filtrar</strong>
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <%= form_tag(filterVehiculos_path, method: "post") do %>
+          <%= label_tag(:patente, "Patente: ") %>
+          <%= text_field_tag(:patente) %>
+          </br>
+          <%= label_tag(:marca, "Marca: ") %>
+          <%= select_tag(:marca, options_for_select(Vehiculo.getMarcaList.prepend("Seleccione...")))%>
+          </br>
+          <%= label_tag(:modelo, "Modelo: ") %>
+          <%= text_field_tag(:modelo) %>
+          </br>
+          <%= label_tag(:anho, "Año: ") %>
+          <%= number_field_tag(:anho, :in => 1980..2014, :value => 2014) %>
+          </br>
+          <%= label_tag(:color, "Color: ") %>
+          <%= select_tag(:color, options_for_select(Vehiculo.getColorList.prepend("Seleccione...")))%>
+          </br>
+          <%= label_tag(:chasis, "Chasis: ") %>
+          <%= text_field_tag(:chasis) %>
+          </br>
+          <%= label_tag(:n_motor, "Numero de Motor: ") %>
+          <%= text_field_tag(:n_motor) %>
+          </br>
+          <%= label_tag(:kilometraje, "Kilometraje: ") %>
+          <%= text_field_tag(:kilometraje) %>
+          </br>
+          <%= label_tag(:tipo_combustible, "Tipo de Combustible: ") %>
+          <%= select_tag(:tipo_combustible, options_for_select(Vehiculo.getTipoCombustibleList.prepend("Seleccione...")))%>
+          </br>
+          <%= label_tag(:es_4x4, "Tiene 4x4: ") %>
+          <%= select_tag(:es_4x4, options_for_select(["Seleccione...","Tiene", "No Tiene"]))%>
+          </br>
+          <%= label_tag(:categoria, "Categoría: ") %>
+          <%= select_tag(:categoria, options_for_select(Vehiculo.getCategoriaList.prepend("Seleccione...")))%>
+          </br>
+          <%= label_tag(:n_puertas, "Numero de Puertas: ") %>
+          <%= number_field_tag :n_puertas, :class => "form-control" %>
+          </br>
+          <%= label_tag(:a_c, "Tiene A/C: ") %>
+          <%= select_tag(:a_c, options_for_select(["Seleccione...","Tiene", "No Tiene"]))%>
+          </br>
+          <%= label_tag(:gps, "Tiene GPS: ") %>
+          <%= select_tag(:gps, options_for_select(["Seleccione...","Tiene", "No Tiene"]))%>
+          </br>
+          <%= label_tag(:disponible, "Está disponible: ") %>
+          <%= select_tag(:disponible, options_for_select(["Seleccione...","Disponible", "No Disponible"]))%>
+          </br>
+          <%= label_tag(:costo, "Costo por día entre ") %>
+          <%= number_field_tag :costo_min, :min => 0%>
+          <%= label_tag(:costo, "y ") %>
+          <%= number_field_tag :costo_max, :min => 0%>
+
+
+          <%= submit_tag("Filtrar", class: 'btn') %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -51,3 +120,7 @@
 <br>
 
 <%= link_to 'Nuevo Vehiculo', new_vehiculo_path %>
+
+<script type="text/javascript">
+$(".collapse").collapse()
+</script>
