@@ -46,7 +46,9 @@
           <%= f.label :cargo %><%= f.select(:cargo, options_for_select(["Jefe de Sucursal", "Vendedor", "Mecanico"]),:class => "form-control") %>
         </div>
       </div>
-      <%= f.submit @label, :class => "btn btn-default" %>
+      <%= f.submit @label, :class => "btn btn-success" %>
+
+      <%= link_to 'Volver', personas_path,:class => "btn btn-default" %>
   </div>
 </div>
 <% end %>

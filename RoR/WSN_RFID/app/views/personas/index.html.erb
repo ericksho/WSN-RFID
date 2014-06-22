@@ -1,4 +1,6 @@
 <table class="table table-striped">
+  <p id="notice"><%= notice %></p>
+
   <thead>
     <tr>
       <th>Nombre</th>
@@ -22,7 +24,9 @@
         <td><%= persona.celular %></td>
         <td><%= persona.fecha_nacimiento.strftime("%d/%m/%Y")%></td>
         <td><%= persona.cargo %></td>
+        <!--
         <td><%= link_to 'Ver', persona, :class => "btn btn-primary btn-sm" %></td>
+        -->
         <td><%= link_to 'Editar', edit_persona_path(persona), :class => "btn btn-warning btn-sm" %></td>
         <td><%= link_to 'Eliminar', persona, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></td>
       </tr>
