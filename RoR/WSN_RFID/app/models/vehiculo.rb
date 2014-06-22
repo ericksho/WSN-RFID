@@ -1,5 +1,7 @@
 class Vehiculo < ActiveRecord::Base
 
+	has_many :articulos
+
 	def self.getMarcaList
 		Vehiculo.uniq.pluck(:marca).sort
 	end

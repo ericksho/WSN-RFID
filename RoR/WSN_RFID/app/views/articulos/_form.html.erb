@@ -19,10 +19,10 @@
       </div>
       <div class="form-select">
         <div class="form-group">
-          <%= f.label :cargo %><%= collection_select(:articulo, :persona_id, Persona.all, :id, :rut, :prompt => 'Seleccione por rut', :selected => @persona_selected,:class => "form-control") %>
+          <%= f.label :cargo %><%= collection_select(:articulo, :persona_id, Persona.includes(:articulos).all.select{|p| p.articulos.count < 1}, :id, :rut, :prompt => 'Seleccione por rut', :selected => @persona_selected,:class => "form-control") %>
         </div>
         <div class="form-group">
-          <%= f.label :cargo %><%= collection_select(:articulo, :vehiculo_id, Vehiculo.all, :id, :patente, :prompt => 'Seleccione por patente', :selected => @vehiculo_selected,:class => "form-control") %>
+          <%= f.label :cargo %><%= collection_select(:articulo, :vehiculo_id, Vehiculo.includes(:articulos).all.select{|v| v.articulos.count < 1}, :id, :patente, :prompt => 'Seleccione por patente', :selected => @vehiculo_selected,:class => "form-control") %>
         </div>
          <div class="field"> 
           <% f.label :estado %><br>
