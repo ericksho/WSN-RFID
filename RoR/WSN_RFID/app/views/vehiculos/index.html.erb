@@ -70,13 +70,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Patente</th>
       <th>Marca</th>
       <th>Modelo</th>
       <th>Año</th>
       <th>Color</th>
-      <th>Chasis</th>
-      <th>Numero motor</th>
       <th>Kilometraje</th>
       <th>Tipo combustible</th>
       <th>4x4</th>
@@ -93,20 +90,23 @@
   <tbody>
     <% @vehiculos.each do |vehiculo| %>
       <tr>
-        <td><%= vehiculo.patente %></td>
         <td><%= vehiculo.marca %></td>
         <td><%= vehiculo.modelo %></td>
         <td><%= vehiculo.anho %></td>
         <td><%= vehiculo.color %></td>
-        <td><%= vehiculo.chasis %></td>
-        <td><%= vehiculo.n_motor %></td>
         <td><%= vehiculo.kilometraje %></td>
         <td><%= vehiculo.tipo_combustible %></td>
         <td><%= vehiculo.es_4x4 %></td>
         <td><%= vehiculo.categoria %></td>
         <td><%= vehiculo.n_puertas %></td>
         <td><%= vehiculo.a_c %></td>
-        <td><%= vehiculo.gps %></td>
+        <td>
+			<% if vehiculo.gps %>
+				Si
+			<% else %>
+				No
+			<% end %>
+		</td>
         <td><%= vehiculo.disponible %></td>
         <td><%= vehiculo.costo %></td>
         <td><%= link_to 'Ver', vehiculo %></td>
