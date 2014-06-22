@@ -99,7 +99,13 @@
         <td><%= vehiculo.es_4x4 %></td>
         <td><%= vehiculo.categoria %></td>
         <td><%= vehiculo.n_puertas %></td>
-        <td><%= vehiculo.a_c %></td>
+        <td>
+			<% if vehiculo.a_c %>
+				Si
+			<% else %>
+				No
+			<% end %>
+		</td>
         <td>
 			<% if vehiculo.gps %>
 				Si
