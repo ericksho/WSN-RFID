@@ -47,7 +47,7 @@
       </div>
       <div class="form-select">
         <div class="form-group">
-          <%= f.label :categoria %><%= f.select(:categoria, options_for_select(["Sedan", "SUV", "HatchBack", "Jeep", "Lujo"]),:class => "form-control", :selected => @vehiculo.categoria) %>
+          <%= f.label :categoria %><%= f.select(:categoria, options_for_select([@vehiculo.categoria, "Sedan", "SUV", "HatchBack", "Jeep", "Lujo"]),:class => "form-control") %>
         </div>
       </div>
       <div class="form-group">
