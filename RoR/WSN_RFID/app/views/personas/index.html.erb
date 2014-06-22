@@ -20,7 +20,7 @@
         <td><%= persona.rut %></td>
         <td><%= persona.email %></td>
         <td><%= persona.celular %></td>
-        <td><%= persona.fecha_nacimiento %></td>
+        <td><%= persona.fecha_nacimiento.strftime("%d/%m/%Y")%></td>
         <td><%= persona.cargo %></td>
         <td><%= link_to 'Ver', persona %></td>
         <td><%= link_to 'Editar', edit_persona_path(persona) %></td>

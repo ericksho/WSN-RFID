@@ -21,6 +21,9 @@
          <%= f.label :apellido %><%= f.text_field :apellido, :class => "form-control" %>
       </div>
       <div class="form-group">
+         <%= f.label :rut %><%= f.text_field :rut, :class => "form-control" %>
+      </div>
+      <div class="form-group">
          <%= f.label :email %> <%= f.text_field :email, :class => "form-control" %>
       </div>
       <div class="form-group">
@@ -30,7 +33,8 @@
         <%= f.label :fecha_nacimiento %> <%= f.text_field :fecha_nacimiento, :class => "form-control", :id => "datepicker", :'data-behaviour' => 'datepicker', :value => Date.today %>
       </div> -->
       <div class="form-group">
-          <div class="input-group date datepicker" data-date-format="YYYY/MM/DD">
+         <%= f.label :fecha_nacimiento %>
+          <div class="input-group date datepicker" data-date-format="DD/MM/YYYY">
               <%= f.text_field :fecha_nacimiento, :class => "form-control" %>
               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
               </span>

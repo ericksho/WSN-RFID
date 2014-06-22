@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WSNRfid</title>
+  <title>WSN Chile - RFID</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -20,12 +20,12 @@
           <span class="icon-bar"></span>
         </button>
       
-		<a class="navbar-brand" href="#">WSN RFID</a>		
+		<a class="navbar-brand" href=<%=root_path %>>WSN Chile - RFID</a>		
 
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><%=link_to "Alerta", alertas_path %> </li>
+          <li><%=link_to "Alerta", alertas_path %></li>
           <li><%=link_to current_user.nombre, current_user %></li>  
           <li><%=link_to "Cerrar sesión", session_path, method: :delete %></li>
           
