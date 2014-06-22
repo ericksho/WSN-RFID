@@ -21,10 +21,14 @@
          <%= f.label :marca %><%= f.text_field :marca, :class => "form-control" %>
       </div>
       <div class="form-group">
-         <%= f.label :modelo %> <%= f.text_field :modelo, :class => "form-control" %>
+         <%= f.label :modelo %> <%= f.text_field :modelo, :class => "form-control", :value => @vehiculo.modelo %>
       </div>
       <div class="form-group">
-        <%= f.label :Año %> <%= f.number_field(:anho, :in => 1980..2014, :value => 2014, :class => "form-control") %>
+		<% if @vehiculo.anho %>
+			<%= f.label :Año %> <%= f.number_field(:anho, :in => 1980..2014, :value => @vehiculo.anho, :class => "form-control") %>
+		<% else %>
+			<%= f.label :Año %> <%= f.number_field(:anho, :in => 1980..2014, :value => 2014, :class => "form-control") %>
+		<% end %>
       </div>
       <div class="form-group">
          <%= f.label :color %> <%= f.text_field :color, :class => "form-control" %>
@@ -41,12 +45,9 @@
       <div class="form-group">
          <%= f.label "4x4" %> </br><%= f.check_box :es_4x4%>
       </div>
-      <div class="form-group">
-         <%= f.label :modelo %> <%= f.text_field :modelo, :class => "form-control" %>
-      </div>
       <div class="form-select">
         <div class="form-group">
-          <%= f.label :categoria %><%= f.select(:categoria, options_for_select(["Sedan", "SUV", "HatchBack", "Jeep", "Lujo"]),:class => "form-control") %>
+          <%= f.label :categoria %><%= f.select(:categoria, options_for_select(["Sedan", "SUV", "HatchBack", "Jeep", "Lujo"]),:class => "form-control", :selected => @vehiculo.categoria) %>
         </div>
       </div>
       <div class="form-group">
@@ -63,7 +64,7 @@
       </div>
       
       <div class="form-group">
-         <%= f.label "Costo diario" %><%= f.number_field :costo, :class => "form-control" %>
+         <%= f.label "Costo diario" %><%= f.number_field :costo, :class => "form-control", :value => @vehiculo.costo %>
       </div>
       <%= f.submit @label, :class => "btn btn-default" %>
   </div>
