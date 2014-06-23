@@ -29,7 +29,12 @@ class LecturasController < ApplicationController
   def createPost
     #ApiKey
 
-    @lectura = Lectura.new(fecha: params[:ReadTime], articulo_id: params[:Code], lector_id: params[:ReaderId])
+	articulo = Articulo.find_by_rfid(params[:Code])
+	
+    @lectura = Lectura.new(fecha: params[:ReadTime], articulo_id: articulo.id, lector_id: params[:ReaderId])
+	
+	articulo.upr = @lectura.lector.posicion
+	articulo.save
 
     respond_to do |format|
       if @lectura.save
