@@ -17,4 +17,8 @@ class Vehiculo < ActiveRecord::Base
 	def self.getCategoriaList
 		Vehiculo.uniq.pluck(:categoria).sort
 	end
+
+	def self.getNPuertasList
+		Vehiculo.uniq.pluck(:n_puertas).sort
+	end
 end

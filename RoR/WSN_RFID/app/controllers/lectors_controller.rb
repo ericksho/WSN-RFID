@@ -30,7 +30,7 @@ class LectorsController < ApplicationController
 
     respond_to do |format|
       if @lector.save
-        format.html { redirect_to lectors_path, notice: 'Lector was successfully created.' }
+        format.html { redirect_to lectors_path, notice: 'El lector fue creado con éxito.' }
         format.json { render :show, status: :created, location: @lector }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class LectorsController < ApplicationController
   def update
     respond_to do |format|
       if @lector.update(lector_params)
-        format.html { redirect_to @lector, notice: 'Lector was successfully updated.' }
+        format.html { redirect_to lectors_path, notice: 'El lector fue actualizado.' }
         format.json { render :show, status: :ok, location: @lector }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class LectorsController < ApplicationController
   def destroy
     @lector.destroy
     respond_to do |format|
-      format.html { redirect_to lectors_url, notice: 'Lector was successfully destroyed.' }
+      format.html { redirect_to lectors_url, notice: 'El lector fue eliminado.' }
       format.json { head :no_content }
     end
   end

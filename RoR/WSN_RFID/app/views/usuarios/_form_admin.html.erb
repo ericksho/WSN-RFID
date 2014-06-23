@@ -32,10 +32,14 @@
       </div>
       <div class="form-select">
         <div class="form-group">
-          <%= f.label :cargo %><%= select("permiso_select", "id", Permiso.all.collect {|p| [ p.titulo, p.id ]}) %>
+          <%= f.label :cargo %>
+          
+
+          <%= collection_select(:usuario, :cargo, Permiso.all.sort_by{|c| c[:titulo]}, :titulo, :titulo, :prompt => 'Seleccione un cargo', :selected => @permiso_selected , :class => "form-control", :value => @usuario.cargo) %>
         </div>
       </div>
-      <%= f.submit @label, :class => "btn btn-default" %>
+      <%= f.submit @label, :class => "btn btn-success" %>
+      <%= link_to 'Volver', usuarios_path, :class => "btn btn-default" %>
   </div>
 </div>
 <% end %>

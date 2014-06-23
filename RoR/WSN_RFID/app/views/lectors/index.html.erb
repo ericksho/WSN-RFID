@@ -1,4 +1,8 @@
 <table class="table table-striped">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Lectores</h1>
+
   <thead>
     <tr>
 		  <th>Nombre</th>
@@ -12,9 +16,9 @@
       <tr>
 		<td><%= lector.nombre %></td>
         <td><%= lector.posicion %></td>
-        <td><%= link_to 'Ver', lector %></td>
-        <td><%= link_to 'Editar', edit_lector_path(lector) %></td>
-        <td><%= link_to 'Destroy', lector, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el lector?' } %></td>
+        <td><%= link_to 'Ver', lector, :class => "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Editar', edit_lector_path(lector), :class => "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Eliminar', lector, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el lector?' }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +26,4 @@
 
 <br>
 
-<%= link_to 'Nuevo Lector', new_lector_path %>
+<%= link_to 'Nuevo Lector', new_lector_path, :class => "btn btn-primary" %>

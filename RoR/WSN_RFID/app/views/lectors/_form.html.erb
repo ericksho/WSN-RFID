@@ -20,7 +20,9 @@
       <div class="form-group">
          <%= f.label 'Posición' %> <%= f.text_field :posicion, :class => "form-control" %>
       </div>
-      <%= f.submit @label, :class => "btn btn-default" %>
+      <%= f.submit @label, :class => "btn btn-success" %>
+
+      <%= link_to 'Volver', lectors_path, :class => "btn btn-default" %>
   </div>
 </div>
 <% end %>

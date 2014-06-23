@@ -43,7 +43,7 @@
           <%= select_tag(:categoria, options_for_select(Vehiculo.getCategoriaList.prepend("Seleccione...")))%>
           </br>
           <%= label_tag(:n_puertas, "Número de Puertas: ") %>
-          <%= number_field_tag :n_puertas, :class => "form-control" %>
+          <%= select_tag(:n_puertas, options_for_select(Vehiculo.getNPuertasList.prepend("Seleccione...")))%>
           </br>
           <%= label_tag(:a_c, "Tiene A/C: ") %>
           <%= select_tag(:a_c, options_for_select(["Seleccione...","Tiene", "No Tiene"]))%>
@@ -67,6 +67,8 @@
     </div>
   </div>
 </div>
+
+<h1>Vehículos</h1>
 
 <table class="table table-striped">
   <thead>

@@ -47,7 +47,8 @@
 				<% if @vehiculo.tipo_combustible %>
 					<%= f.label :tipo_combustible %> <%= f.select(:tipo_combustible, options_for_select([@vehiculo.tipo_combustible, "Gasolina", "Diesel", "Otros"].uniq), :class => "form-control" )%>
 				<% else %>
-					<%= f.label :tipo_combustible %> <%= f.select(:tipo_combustible, options_for_select(["Gasolina", "Diesel", "Otros"]), :class => "form-control" )%>
+					<%= f.label :tipo_combustible %> 
+          <%= f.select(:tipo_combustible, options_for_select(["Gasolina", "Diesel", "Otros"]), :class => "form-control" )%>
 				<% end %>
 			</div>
 		</div>
@@ -62,9 +63,10 @@
 				<%= f.label :categoria %><%= f.select(:categoria, options_for_select(["Sedán", "SUV", "HatchBack", "Jeep", "Lujo"]),:class => "form-control") %>
 			<% end %>
         </div>
-      </div>
-      <div class="form-group">
-        <%= f.label "Numero de puertas" %><%= f.number_field :n_puertas, :class => "form-control" %>
+        <div class="form-group">
+          <%= f.label "Numero de puertas" %>
+          <%= f.select(:n_puertas, options_for_select(["0", "1", "2", "3", "4", "5"]), :class => "form-control" )%>
+        </div>
       </div>
       <div class="form-group">
          <%= f.label "A/C" %> </br><%= f.check_box :a_c %>

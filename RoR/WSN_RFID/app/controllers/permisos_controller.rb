@@ -30,7 +30,7 @@ class PermisosController < ApplicationController
 
     respond_to do |format|
       if @permiso.save
-        format.html { redirect_to permisos_path, notice: 'Permiso was successfully created.' }
+        format.html { redirect_to permisos_path, notice: 'Permiso fue creado con éxito.' }
         format.json { render :show, status: :created, location: @permiso }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class PermisosController < ApplicationController
   def update
     respond_to do |format|
       if @permiso.update(permiso_params)
-        format.html { redirect_to @permiso, notice: 'Permiso was successfully updated.' }
+        format.html { redirect_to permisos_path, notice: 'Permiso fue actualizado.' }
         format.json { render :show, status: :ok, location: @permiso }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class PermisosController < ApplicationController
   def destroy
     @permiso.destroy
     respond_to do |format|
-      format.html { redirect_to permisos_url, notice: 'Permiso was successfully destroyed.' }
+      format.html { redirect_to permisos_url, notice: 'Permiso fue eliminado.' }
       format.json { head :no_content }
     end
   end

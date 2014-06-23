@@ -52,9 +52,13 @@ class LecturasController < ApplicationController
   def create
     @lectura = Lectura.new(lectura_params)
 
+    articulo = @lectura.articulo
+    articulo.upr = @lectura.lector.posicion
+    articulo.save
+
     respond_to do |format|
       if @lectura.save
-        format.html { redirect_to @lectura, notice: 'Lectura creada con éxito.' }
+        format.html { redirect_to lecturas_path, notice: 'Lectura creada con éxito.' }
         format.json { render :show, status: :created, location: @lectura }
       else
         format.html { render :new }
@@ -68,7 +72,7 @@ class LecturasController < ApplicationController
   def update
     respond_to do |format|
       if @lectura.update(lectura_params)
-        format.html { redirect_to @lectura, notice: 'La lectura fue actualizada.' }
+        format.html { redirect_to lecturas_path, notice: 'La lectura fue actualizada.' }
         format.json { render :show, status: :ok, location: @lectura }
       else
         format.html { render :edit }
@@ -95,6 +99,6 @@ class LecturasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lectura_params
-      params.require(:lectura).permit(:fecha)
+      params.require(:lectura).permit(:fecha, :lector_id, :articulo_id)
     end
 end

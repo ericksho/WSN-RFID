@@ -1,6 +1,7 @@
 <table class="table table-striped">
   <p id="notice"><%= notice %></p>
 
+  <h1>Lecturas</h1>
   <thead>
     <tr>
       <th>Fecha</th>
@@ -13,24 +14,24 @@
   <tbody>
     <% @lecturas.each do |lectura| %>
       <tr>
-        <td><%= lectura.fecha %></td>
+        <td><%= lectura.fecha.strftime("%d/%m/%Y %H:%M:%S") %></td>
         <td>
 			<% if lectura.articulo %>
 				<% if lectura.articulo.persona %>
-					<%= link_to lectura.articulo.persona.rut, lectura.articulo.persona %>
+					Persona: <%= link_to lectura.articulo.persona.rut, lectura.articulo.persona %>
 				<% elsif lectura.articulo.vehiculo %>
-					<%= link_to lectura.articulo.vehiculo.patente, lectura.articulo.vehiculo %>
+					Vehículo <%= link_to lectura.articulo.vehiculo.patente, lectura.articulo.vehiculo %>
 				<% else %>
 					<%= link_to lectura.articulo.rfid, lectura.articulo %>
 				<% end %>
 			<% end %>
 		</td>
-        <td><%= link_to lectura.lector.nombre, lectura.lector %></td>
+        <td><%= link_to lectura.lector.posicion, lectura.lector %></td>
         <!--
         <td><%= link_to 'Ver', lectura %></td>
         <td><%= link_to 'Editar', edit_lectura_path(lectura) %></td>
         -->
-        <td><%= link_to 'Eliminar', lectura, method: :delete, data: { confirm: '¿Está seguro que desea eliminar la lectura?' } %></td>
+        <td><%= link_to 'Eliminar', lectura, method: :delete, data: { confirm: '¿Está seguro que desea eliminar la lectura?' }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>

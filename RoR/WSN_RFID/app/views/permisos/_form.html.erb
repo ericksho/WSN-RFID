@@ -15,7 +15,7 @@
   <div class="col-md-6 column">
     <form role="form">
       <div class="form-group">
-        <%= f.label :titulo %>
+        <%= f.label "Título" %>
         <%= f.text_field :titulo, :class => "form-control" %>
       </div>
 
@@ -28,7 +28,7 @@
         <%= f.check_box :acceso_alerta %> Sección Alertas
 
         </br>
-        <%= f.check_box :acceso_articulo %> Sección Articulos
+        <%= f.check_box :acceso_articulo %> Sección Artículos
         
         </br>
         <%= f.check_box :acceso_lector %> Sección Lectores
@@ -46,10 +46,12 @@
         <%= f.check_box :acceso_usuario %> Sección Usuarios
         
         </br>
-        <%= f.check_box :acceso_vehiculo %> Sección Vehiculos
+        <%= f.check_box :acceso_vehiculo %> Sección Vehículos
     </div>
     
-    <%= f.submit @label, :class => "btn btn-default" %>
+    <%= f.submit @label, :class => "btn btn-success" %>
+
+    <%= link_to 'Volver', permisos_path, :class => "btn btn-default" %>
   </div>
 </div>
 <% end %>

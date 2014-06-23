@@ -1,17 +1,20 @@
 <table class="table table-condensed">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Permisos de Acceso</h1>
+  
   <thead>
     <tr>
-      <th>Titulo</th>
+      <th>Título</th>
       <th>Acceso Alerta</th>
-      <th>Acceso Articulo</th>
-      <th>Acceso Atributo</th>
+      <th>Acceso Artículo</th>
       <th>Acceso Lector</th>
       <th>Acceso Lectura</th>
-      <th>Acceso Paquete</th>
       <th>Acceso Permiso</th>
       <th>Acceso Persona</th>
       <th>Acceso Usuario</th>
-      <th>Acceso Vehiculo</th>
+      <th>Acceso Vehículo</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -21,17 +24,17 @@
          <td><%= permiso.titulo %></td>
         <td><%= check_box('alerta',"0", {:checked => permiso.acceso_alerta, :disabled => true}) %></td>
         <td><%= check_box('articulo',"0", {:checked => permiso.acceso_articulo, :disabled => true}) %></td>
-        <td><%= check_box('atributo',"0", {:checked => permiso.acceso_atributo, :disabled => true}) %></td>
         <td><%= check_box('lector',"0", {:checked => permiso.acceso_lector, :disabled => true}) %></td>
         <td><%= check_box('lectura',"0", {:checked => permiso.acceso_lectura, :disabled => true}) %></td>
-        <td><%= check_box('paquete',"0", {:checked => permiso.acceso_paquete, :disabled => true}) %></td>
         <td><%= check_box('permiso',"0", {:checked => permiso.acceso_permiso, :disabled => true}) %></td>
         <td><%= check_box('persona',"0", {:checked => permiso.acceso_persona, :disabled => true}) %></td>
         <td><%= check_box('usuario',"0", {:checked => permiso.acceso_usuario, :disabled => true}) %></td>
         <td><%= check_box('vehiculo',"0", {:checked => permiso.acceso_vehiculo, :disabled => true}) %></td>
+        <!--
         <td><%= link_to 'Ver', permiso %></td>
-        <td><%= link_to 'Editar', edit_permiso_path(permiso) %></td>
-        <td><%= link_to 'Destroy', permiso, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el permiso?' } %></td>
+        -->
+        <td><%= link_to 'Editar', edit_permiso_path(permiso), :class => "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Eliminar', permiso, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el permiso?' }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -39,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Permiso', new_permiso_path %>
+<%= link_to 'Crear Permiso', new_permiso_path, :class => "btn btn-primary" %>

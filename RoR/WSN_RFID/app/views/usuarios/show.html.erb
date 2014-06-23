@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @usuario.status %>
-</p>
+<h1><%= @usuario.nombre %> <%= @usuario.apellido %></h1>
 
 <p>
   <strong>Email:</strong>
@@ -20,5 +17,10 @@
   <%= @usuario.apellido %>
 </p>
 
-<%= link_to 'Editar', edit_usuario_path(@usuario) %> |
-<%= link_to 'Volver', usuarios_path %>
+<p>
+  <strong>Cargo:</strong>
+  <%= @usuario.cargo %>
+</p>
+
+<%= link_to 'Editar', edit_usuario_path(@usuario), :class=> "btn btn-warning" %>
+<%= link_to 'Volver', usuarios_path, :class=> "btn btn-default" %>
