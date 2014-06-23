@@ -86,3 +86,7 @@ background: transparent;
 a:active {
 color: #000000;
 }
+
+#login-form {
+  width: 307px;
+}

@@ -27,7 +27,7 @@
 
 <p>
   <strong>Fecha nacimiento:</strong>
-  <%= @persona.fecha_nacimiento %>
+  <%= @persona.fecha_nacimiento.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -35,5 +35,5 @@
   <%= @persona.cargo %>
 </p>
 
-<%= link_to 'Editar', edit_persona_path(@persona) %> |
-<%= link_to 'Volver', personas_path %>
+<%= link_to 'Editar', edit_persona_path(@persona), :class => "btn btn-warning" %>
+<%= link_to 'Volver', personas_path, :class => "btn btn-default" %>

@@ -6,9 +6,11 @@
 <% end -%>
 
 <div id="login-form">
+	<h2 class="form-signin-heading">Por favor inicie sesión</h2>
 	<%= form_for :session, :html => {:class => "form-signin"}, url: session_path do |f| -%>
 	    <%= f.text_field :email, :class => "form-control", :placeholder => "Correo", value: params[:session].try(:[], :email) %>
 	    <%= f.password_field :password, :class => "form-control", :placeholder => 'Contraseña' %>
+		</br>
 	    <%= f.submit "Ingresar" ,:class=>"btn btn-lg btn-primary btn-block" %>
 	<% end -%>
 </div>

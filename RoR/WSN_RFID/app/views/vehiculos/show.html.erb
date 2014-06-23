@@ -66,7 +66,7 @@
 </p>
 
 <p>
-  <strong>Gps:</strong>
+  <strong>GPS:</strong>
   <%= @vehiculo.gps %>
 </p>
 
@@ -86,7 +86,7 @@
 <%= image_tag(@image, width: '400') %>
 
 <script>
+alert("Hola");
 	$.getJSON( "https://www.googleapis.com/customsearch/v1?key=AIzaSyAmNbCJMqQhBfUfW-rDiOc9O1OVBURqw6k&cx=000280892056063219607:nyce3z7od2g&q=citroen+c3&searchType=image&fileType=jpg&imgSize=small&alt=json", function( data ) {
-		alert(data["items"][0]["link"]);
-	}
+	});
 </script>
