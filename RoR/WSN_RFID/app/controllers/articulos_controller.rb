@@ -48,7 +48,7 @@ class ArticulosController < ApplicationController
   def update
     respond_to do |format|
       if @articulo.update(articulo_params)
-        format.html { redirect_to articulos_path, notice: 'El articulo fue editado.' }
+        format.html { redirect_to articulos_path, notice: 'El articulo fue actualizado.' }
         format.json { render :show, status: :ok, location: @articulo }
       else
         format.html { render :edit }

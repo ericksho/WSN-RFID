@@ -27,7 +27,7 @@
           <%= label_tag(:chasis, "Chasis: ") %>
           <%= text_field_tag(:chasis) %>
           </br>
-          <%= label_tag(:n_motor, "Numero de Motor: ") %>
+          <%= label_tag(:n_motor, "Número de Motor: ") %>
           <%= text_field_tag(:n_motor) %>
           </br>
           <%= label_tag(:kilometraje, "Kilometraje: ") %>
@@ -42,7 +42,7 @@
           <%= label_tag(:categoria, "Categoría: ") %>
           <%= select_tag(:categoria, options_for_select(Vehiculo.getCategoriaList.prepend("Seleccione...")))%>
           </br>
-          <%= label_tag(:n_puertas, "Numero de Puertas: ") %>
+          <%= label_tag(:n_puertas, "Número de Puertas: ") %>
           <%= number_field_tag :n_puertas, :class => "form-control" %>
           </br>
           <%= label_tag(:a_c, "Tiene A/C: ") %>
@@ -59,8 +59,9 @@
           <%= label_tag(:costo, "y ") %>
           <%= number_field_tag :costo_max, :min => 0%>
 
-
-          <%= submit_tag("Filtrar", class: 'btn') %>
+          </br>
+          </br>
+          <%= submit_tag("Filtrar", class: 'btn btn-default') %>
         <% end %>
       </div>
     </div>
@@ -69,6 +70,7 @@
 
 <table class="table table-striped">
   <thead>
+    <p id="notice"><%= notice %></p>
     <tr>
       <th>Marca</th>
       <th>Modelo</th>
@@ -77,10 +79,9 @@
       <th>Kilometraje</th>
       <th>Tipo combustible</th>
       <th>4x4</th>
-      <th>Categoria</th>
-      <th>Numero de puertas</th>
+      <th>Número de puertas</th>
       <th>A/C</th>
-      <th>Gps</th>
+      <th>GPS</th>
       <th>Disponible</th>
       <th>Costo</th>
       <th colspan="3"></th>
@@ -96,28 +97,39 @@
         <td><%= vehiculo.color %></td>
         <td><%= vehiculo.kilometraje %></td>
         <td><%= vehiculo.tipo_combustible %></td>
-        <td><%= vehiculo.es_4x4 %></td>
-        <td><%= vehiculo.categoria %></td>
+        <td>
+          <% if vehiculo.es_4x4 %>
+            Si
+          <% else %>
+            No
+          <% end %>
+        </td>
         <td><%= vehiculo.n_puertas %></td>
         <td>
-			<% if vehiculo.a_c %>
-				Si
-			<% else %>
-				No
-			<% end %>
-		</td>
+    			<% if vehiculo.a_c %>
+    				Si
+    			<% else %>
+    				No
+    			<% end %>
+		    </td>
         <td>
-			<% if vehiculo.gps %>
-				Si
-			<% else %>
-				No
-			<% end %>
-		</td>
-        <td><%= vehiculo.disponible %></td>
+    			<% if vehiculo.gps %>
+    				Si
+    			<% else %>
+    				No
+    			<% end %>
+		    </td>
+        <td>
+          <% if vehiculo.disponible %>
+            Si
+          <% else %>
+            No
+          <% end %>
+        </td>
         <td><%= vehiculo.costo %></td>
-        <td><%= link_to 'Ver', vehiculo %></td>
-        <td><%= link_to 'Editar', edit_vehiculo_path(vehiculo) %></td>
-        <td><%= link_to 'Eliminar', vehiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', vehiculo, :class => "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Editar', edit_vehiculo_path(vehiculo), :class => "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Eliminar', vehiculo, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -125,7 +137,7 @@
 
 <br>
 
-<%= link_to 'Nuevo Vehiculo', new_vehiculo_path %>
+<%= link_to 'Nuevo Vehículo', new_vehiculo_path, :class => "btn btn-primary" %>
 
 <script type="text/javascript">
 $(".collapse").collapse()
