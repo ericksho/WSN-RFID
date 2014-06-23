@@ -4,8 +4,8 @@
   <thead>
     <tr>
       <th>Fecha</th>
-      <th>Id del articulo leido</th>
-      <th>id del lector</th>
+      <th>Articulo leido</th>
+      <th>Lector</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +14,18 @@
     <% @lecturas.each do |lectura| %>
       <tr>
         <td><%= lectura.fecha %></td>
-        <td><%= lectura.articulo_id %></td>
-        <td><%= lectura.lector_id %></td>
+        <td>
+			<% if lectura.articulo %>
+				<% if lectura.articulo.persona %>
+					<%= link_to lectura.articulo.persona.rut lectura.articulo.persona %>
+				<% elsif lectura.articulo.vehiculo %>
+					<%= link_to lectura.articulo.vehiculo.patente lectura.articulo.vehiculo %>
+				<% else %>
+					<%= link_to lectura.articulo.rfid lectura.articulo %>
+				<% end %>
+			<% end %>
+		</td>
+        <td><%= link_to lectura.lector.nombre lectura.lector %></td>
         <!--
         <td><%= link_to 'Ver', lectura %></td>
         <td><%= link_to 'Editar', edit_lectura_path(lectura) %></td>
