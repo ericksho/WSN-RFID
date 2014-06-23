@@ -10,6 +10,11 @@ class ArticulosController < ApplicationController
       rfid = params[:rfid].to_i
       @articulos = @articulos.where(rfid: rfid)
     end
+
+    if params.has_key?(:upr) && params[:upr] != "Seleccione..."
+      upr = params[:upr]
+      @articulos = @articulos.where(Articulo.arel_table[:upr].matches("%#{upr}%"))
+    end
   end
 
   # GET /articulos/1
@@ -80,6 +85,6 @@ class ArticulosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def articulo_params
-      params.require(:articulo).permit(:rfid, :estado,:vehiculo_id,:persona_id, :upr)
+      params.require(:articulo).permit(:rfid, :estado, :vehiculo_id, :persona_id, :upr)
     end
 end

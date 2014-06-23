@@ -17,15 +17,15 @@
         <td>
 			<% if lectura.articulo %>
 				<% if lectura.articulo.persona %>
-					<%= link_to lectura.articulo.persona.rut lectura.articulo.persona %>
+					<%= link_to lectura.articulo.persona.rut, lectura.articulo.persona %>
 				<% elsif lectura.articulo.vehiculo %>
-					<%= link_to lectura.articulo.vehiculo.patente lectura.articulo.vehiculo %>
+					<%= link_to lectura.articulo.vehiculo.patente, lectura.articulo.vehiculo %>
 				<% else %>
-					<%= link_to lectura.articulo.rfid lectura.articulo %>
+					<%= link_to lectura.articulo.rfid, lectura.articulo %>
 				<% end %>
 			<% end %>
 		</td>
-        <td><%= link_to lectura.lector.nombre lectura.lector %></td>
+        <td><%= link_to lectura.lector.nombre, lectura.lector %></td>
         <!--
         <td><%= link_to 'Ver', lectura %></td>
         <td><%= link_to 'Editar', edit_lectura_path(lectura) %></td>
