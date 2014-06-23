@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 class VehiculosController < ApplicationController
   before_action :set_vehiculo, only: [:show, :edit, :update, :destroy]
 
@@ -97,6 +100,8 @@ class VehiculosController < ApplicationController
   # GET /vehiculos/1
   # GET /vehiculos/1.json
   def show
+	result = JSON.parse(open("https://www.googleapis.com/customsearch/v1?key=AIzaSyBFHG4xWGAsLGIFL1mqETW-x7RrkKQC2U0&cx=000280892056063219607:nyce3z7od2g&q=#{@vehiculo.marca}+#{@vehiculo.modelo}+side&searchType=image&fileType=jpg&imgSize=small&alt=json", {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}).read)
+	@image = result["items"][0]["link"]
   end
 
   # GET /vehiculos/new
