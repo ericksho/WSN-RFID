@@ -1,6 +1,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+		<th>Nombre</th>
       <th>Posicion</th>
       <th colspan="3"></th>
     </tr>
@@ -9,6 +10,7 @@
   <tbody>
     <% @lectors.each do |lector| %>
       <tr>
+		<td><%= lector.nombre %></td>
         <td><%= lector.posicion %></td>
         <td><%= link_to 'Ver', lector %></td>
         <td><%= link_to 'Editar', edit_lector_path(lector) %></td>
