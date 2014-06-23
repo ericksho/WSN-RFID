@@ -1,10 +1,12 @@
 <table class="table table-striped">
+  <p id="notice"><%= notice %></p>
+
   <thead>
     <tr>
       <th>Rfid</th>
       <th>Estado</th>
       <th>Asociado a</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -18,12 +20,14 @@
               Persona: <%= link_to(Persona.find_by_id(articulo.persona_id).rut, Persona.find_by_id(articulo.persona_id)) %>
             <% end %>
             <% if articulo.vehiculo_id %>
-              Vehiculo: <%= link_to(Vehiculo.find_by_id(articulo.vehiculo_id).patente, Vehiculo.find_by_id(articulo.vehiculo_id)) %>
+              Vehículo: <%= link_to(Vehiculo.find_by_id(articulo.vehiculo_id).patente, Vehiculo.find_by_id(articulo.vehiculo_id)) %>
             <% end %>
         </td>
+        <!--
         <td><%= link_to 'Ver', articulo %></td>
-        <td><%= link_to 'Editar', edit_articulo_path(articulo) %></td>
-        <td><%= link_to 'Eliminar', articulo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_articulo_path(articulo), :class => "btn btn-warning btn-sm" %></td>
+        -->
+        <td><%= link_to 'Eliminar', articulo, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +35,4 @@
 
 <br>
 
-<%= link_to 'Crear Artículo (Bautizo)', new_articulo_path %>
+<%= link_to 'Crear Artículo (Bautizo)', new_articulo_path, :class => "btn btn-primary" %>
