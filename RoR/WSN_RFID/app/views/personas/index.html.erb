@@ -26,7 +26,7 @@
         <td><%= persona.cargo %></td>
         <td><%= link_to 'Ver', persona, :class => "btn btn-primary btn-xs" %></td>
         <td><%= link_to 'Editar', edit_persona_path(persona), :class => "btn btn-warning btn-xs" %></td>
-        <td><%= link_to 'Eliminar', persona, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %></td>
+        <td><%= link_to 'Eliminar', persona, method: :delete, data: { confirm: '¿Está seguro que desea eliminar la persona?' }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>

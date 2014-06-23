@@ -71,6 +71,6 @@ class LectorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lector_params
-      params.require(:lector).permit(:posicion)
+      params.require(:lector).permit(:nombre, :posicion)
     end
 end

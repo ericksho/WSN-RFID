@@ -15,10 +15,23 @@
   <div class="col-md-6 column">
     <form role="form">
       <div class="form-group">
-          <div class="input-group date datetimepicker">
-              <%= f.text_field :fecha, :class => "form-control" %>
-              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-              </span>
+          <div class="form-group">
+            <%= f.label :fecha %>
+            <div class="input-group date datetimepicker" data-date-format="DD/MM/YYYY">
+                <%= f.text_field :fecha, :class => "form-control" %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+          <div class="form-group">
+             <%= f.label :articulo_id %>
+             <%= f.number_field :articulo_id, :class => "form-control", :value => @lectura.articulo_id %>
+             <%= select_tag(:marca, options_for_select(Articulo.getRFIDList.prepend("Seleccione...")))%>
+          </div>
+          <div class="form-group">
+             <%= f.label :lector_id %>
+             <%= f.number_field :lector_id, :class => "form-control", :value => @lectura.lector_id %>
+             <%= select_tag(:marca, options_for_select(Lector.getNombreList.prepend("Seleccione...")))%>
           </div>
       </div>   
       <%= f.submit @label, :class => "btn btn-default" %>

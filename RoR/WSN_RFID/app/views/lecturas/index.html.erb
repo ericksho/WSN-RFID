@@ -1,4 +1,6 @@
 <table class="table table-striped">
+  <p id="notice"><%= notice %></p>
+
   <thead>
     <tr>
       <th>Fecha</th>
@@ -14,9 +16,11 @@
         <td><%= lectura.fecha %></td>
         <td><%= lectura.articulo_id %></td>
         <td><%= lectura.lector_id %></td>
+        <!--
         <td><%= link_to 'Ver', lectura %></td>
         <td><%= link_to 'Editar', edit_lectura_path(lectura) %></td>
-        <td><%= link_to 'Eliminar', lectura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
+        <td><%= link_to 'Eliminar', lectura, method: :delete, data: { confirm: '¿Está seguro que desea eliminar la lectura?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Nueva Lectura', new_lectura_path %>
+<%= link_to 'Nueva Lectura', new_lectura_path, :class => "btn btn-primary" %>

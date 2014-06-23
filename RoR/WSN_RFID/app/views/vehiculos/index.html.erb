@@ -129,7 +129,7 @@
         <td><%= vehiculo.costo %></td>
         <td><%= link_to 'Ver', vehiculo, :class => "btn btn-primary btn-xs" %></td>
         <td><%= link_to 'Editar', edit_vehiculo_path(vehiculo), :class => "btn btn-warning btn-xs" %></td>
-        <td><%= link_to 'Eliminar', vehiculo, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %></td>
+        <td><%= link_to 'Eliminar', vehiculo, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el vehículo?' }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,10 +1,35 @@
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        <strong>Filtrar</strong>
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <%= form_tag(filterArticulos_path, method: "post") do %>
+          <%= label_tag(:rfid, "RFID: ") %>
+          <%= select_tag(:rfid, options_for_select(Articulo.getRFIDList.prepend("Seleccione...")))%>
+          </br>
+          <%= label_tag(:upr, "Última Posición Registrada: ") %>
+          <%= select_tag(:upr, options_for_select(Articulo.getUPRList.prepend("Seleccione...")))%>
+
+          </br>
+          </br>
+          <%= submit_tag("Filtrar", class: 'btn btn-default') %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <table class="table table-striped">
   <p id="notice"><%= notice %></p>
 
   <thead>
     <tr>
-      <th>Rfid</th>
-      <th>Estado</th>
+      <th>RFID</th>
+      <th>Última Posición Registrada</th>
       <th>Asociado a</th>
       <th></th>
     </tr>
@@ -14,7 +39,7 @@
     <% @articulos.each do |articulo| %>
       <tr>
         <td><%= articulo.rfid %></td>
-        <td><%= articulo.estado %></td>
+        <td><%= articulo.upr %></td>
         <td>
             <% if articulo.persona_id %>
               Persona: <%= link_to(Persona.find_by_id(articulo.persona_id).rut, Persona.find_by_id(articulo.persona_id)) %>
@@ -27,7 +52,7 @@
         <td><%= link_to 'Ver', articulo %></td>
         <td><%= link_to 'Editar', edit_articulo_path(articulo), :class => "btn btn-warning btn-xs" %></td>
         -->
-        <td><%= link_to 'Eliminar', articulo, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %></td>
+        <td><%= link_to 'Eliminar', articulo, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el artículo?' }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,3 +61,7 @@
 <br>
 
 <%= link_to 'Crear Artículo (Bautizo)', new_articulo_path, :class => "btn btn-primary" %>
+
+<script type="text/javascript">
+$(".collapse").collapse()
+</script>

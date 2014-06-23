@@ -4,4 +4,12 @@ class Articulo < ActiveRecord::Base
 	
 	belongs_to :persona
 	belongs_to :vehiculo
+
+	def self.getRFIDList
+		Articulo.uniq.pluck(:rfid).sort
+	end
+
+	def self.getUPRList
+		Articulo.uniq.pluck(:upr).sort
+	end
 end

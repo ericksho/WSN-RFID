@@ -5,6 +5,11 @@ class ArticulosController < ApplicationController
   # GET /articulos.json
   def index
     @articulos = Articulo.all
+
+    if params.has_key?(:rfid) && params[:rfid] != "Seleccione..."
+      rfid = params[:rfid].to_i
+      @articulos = @articulos.where(rfid: rfid)
+    end
   end
 
   # GET /articulos/1
@@ -75,6 +80,6 @@ class ArticulosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def articulo_params
-      params.require(:articulo).permit(:rfid, :estado,:vehiculo_id,:persona_id)
+      params.require(:articulo).permit(:rfid, :estado,:vehiculo_id,:persona_id, :upr)
     end
 end

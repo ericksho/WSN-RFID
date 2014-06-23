@@ -12,7 +12,7 @@
         <td><%= alerta.desconectada %></td>
         <td><%= link_to 'Ver', alerta %></td>
         <td><%= link_to 'Editar', edit_alerta_path(alerta) %></td>
-        <td><%= link_to 'Destroy', alerta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', alerta, method: :delete, data: { confirm: '¿Está seguro que desea eliminar la alerta?' } %></td>
       </tr>
     <% end %>
   </tbody>

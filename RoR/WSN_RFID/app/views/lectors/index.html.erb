@@ -1,8 +1,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-		<th>Nombre</th>
-      <th>Posicion</th>
+		  <th>Nombre</th>
+      <th>Posición</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,7 +14,7 @@
         <td><%= lector.posicion %></td>
         <td><%= link_to 'Ver', lector %></td>
         <td><%= link_to 'Editar', edit_lector_path(lector) %></td>
-        <td><%= link_to 'Destroy', lector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', lector, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el lector?' } %></td>
       </tr>
     <% end %>
   </tbody>

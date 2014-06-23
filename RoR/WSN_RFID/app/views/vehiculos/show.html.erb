@@ -1,89 +1,110 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="col-md-6">
+    <%= image_tag(@image, width: '400', :id => "Image_Tag") %>
+  </div>
+  <div class="col-md-6">
+    <p>
+      <strong>Patente:</strong>
+      <%= @vehiculo.patente %>
+    </p>
 
-<p>
-  <strong>Patente:</strong>
-  <%= @vehiculo.patente %>
-</p>
+    <p>
+      <strong>Marca:</strong>
+      <%= @vehiculo.marca %>
+    </p>
 
-<p>
-  <strong>Marca:</strong>
-  <%= @vehiculo.marca %>
-</p>
+    <p>
+      <strong>Modelo:</strong>
+      <%= @vehiculo.modelo %>
+    </p>
 
-<p>
-  <strong>Modelo:</strong>
-  <%= @vehiculo.modelo %>
-</p>
+    <p>
+      <strong>Año:</strong>
+      <%= @vehiculo.anho %>
+    </p>
 
-<p>
-  <strong>Año:</strong>
-  <%= @vehiculo.anho %>
-</p>
+    <p>
+      <strong>Color:</strong>
+      <%= @vehiculo.color %>
+    </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @vehiculo.color %>
-</p>
+    <p>
+      <strong>Chasis:</strong>
+      <%= @vehiculo.chasis %>
+    </p>
 
-<p>
-  <strong>Chasis:</strong>
-  <%= @vehiculo.chasis %>
-</p>
+    <p>
+      <strong>Numero de motor:</strong>
+      <%= @vehiculo.n_motor %>
+    </p>
 
-<p>
-  <strong>Numero de motor:</strong>
-  <%= @vehiculo.n_motor %>
-</p>
+    <p>
+      <strong>Kilometraje:</strong>
+      <%= @vehiculo.kilometraje %>
+    </p>
 
-<p>
-  <strong>Kilometraje:</strong>
-  <%= @vehiculo.kilometraje %>
-</p>
+    <p>
+      <strong>Tipo de combustible:</strong>
+      <%= @vehiculo.tipo_combustible %>
+    </p>
 
-<p>
-  <strong>Tipo de combustible:</strong>
-  <%= @vehiculo.tipo_combustible %>
-</p>
+    <p>
+      <strong>4x4:</strong>
+      <% if @vehiculo.es_4x4 %>
+        Si
+      <% else %>
+        No
+      <% end %>
+    </p>
 
-<p>
-  <strong>4x4:</strong>
-  <%= @vehiculo.es_4x4 %>
-</p>
+    <p>
+      <strong>Categoria:</strong>
+      <%= @vehiculo.categoria %>
+    </p>
 
-<p>
-  <strong>Categoria:</strong>
-  <%= @vehiculo.categoria %>
-</p>
+    <p>
+      <strong>Numero de puertas:</strong>
+      <%= @vehiculo.n_puertas %>
+    </p>
 
-<p>
-  <strong>Numero de puertas:</strong>
-  <%= @vehiculo.n_puertas %>
-</p>
+    <p>
+      <strong>A/C:</strong>
+      <% if @vehiculo.a_c %>
+        Si
+      <% else %>
+        No
+      <% end %>
+    </p>
 
-<p>
-  <strong>A/C:</strong>
-  <%= @vehiculo.a_c %>
-</p>
+    <p>
+      <strong>GPS:</strong>
+      <% if @vehiculo.gps %>
+        Si
+      <% else %>
+        No
+      <% end %>
+    </p>
 
-<p>
-  <strong>GPS:</strong>
-  <%= @vehiculo.gps %>
-</p>
+    <p>
+      <strong>Disponible:</strong>
+      <% if @vehiculo.disponible %>
+        Si
+      <% else %>
+        No
+      <% end %>
+    </p>
 
-<p>
-  <strong>Disponible:</strong>
-  <%= @vehiculo.disponible %>
-</p>
+    <p>
+      <strong>Costo:</strong>
+      <%= @vehiculo.costo %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>Costo:</strong>
-  <%= @vehiculo.costo %>
-</p>
 
-<%= link_to 'Editar', edit_vehiculo_path(@vehiculo) %> |
-<%= link_to 'Volver', vehiculos_path %>
-
-<%= image_tag(@image, width: '400', :id => "Image_Tag") %>
+<%= link_to 'Editar', edit_vehiculo_path(@vehiculo), :class => "btn btn-warning" %>
+<%= link_to 'Volver', vehiculos_path, :class => "btn btn-default" %>
 
 <script>
 	$.getJSON( "https://www.googleapis.com/customsearch/v1?key=AIzaSyAmNbCJMqQhBfUfW-rDiOc9O1OVBURqw6k&cx=000280892056063219607:nyce3z7od2g&q=<%= @vehiculo.marca %>+<%= @vehiculo.modelo %>+<%= @vehiculo.color %>&searchType=image&fileType=jpg&imgSize=small&alt=json", function( data ) {

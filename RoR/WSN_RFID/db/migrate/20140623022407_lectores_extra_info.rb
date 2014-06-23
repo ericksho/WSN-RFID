@@ -1,9 +1,9 @@
 class LectoresExtraInfo < ActiveRecord::Migration
 	def change
 		add_column :lectors, :nombre, :string
-		Lectors.each do |L|
-			L.nombre = "lector-#{L.id}"
-			L.save
+		Lector.each do |l|
+			l.nombre = "lector-#{l.id}"
+			l.save
 		end
 	end
 end

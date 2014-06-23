@@ -31,7 +31,7 @@
         <td><%= check_box('vehiculo',"0", {:checked => permiso.acceso_vehiculo, :disabled => true}) %></td>
         <td><%= link_to 'Ver', permiso %></td>
         <td><%= link_to 'Editar', edit_permiso_path(permiso) %></td>
-        <td><%= link_to 'Destroy', permiso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', permiso, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el permiso?' } %></td>
       </tr>
     <% end %>
   </tbody>

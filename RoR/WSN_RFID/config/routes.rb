@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   post 'vehiculos/index', as: 'filterVehiculos'
 
+  post 'articulos/index', as: 'filterArticulos'
+
   match 'readReport' => "lecturas#createPost", via: [:post, :get]
 
   resources :alertas

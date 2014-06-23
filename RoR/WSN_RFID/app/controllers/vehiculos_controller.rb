@@ -16,7 +16,6 @@ class VehiculosController < ApplicationController
 
     if params.has_key?(:marca) && params[:marca] != "Seleccione..."
       marca = params[:marca]
-      fdsa
       @vehiculos = @vehiculos.where(Vehiculo.arel_table[:marca].matches("%#{marca}%"))
     end
 
@@ -163,6 +162,6 @@ class VehiculosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehiculo_params
-      params.require(:vehiculo).permit(:patente, :marca, :modelo, :anho, :color, :chasis, :n_motor, :kilometraje, :tipo_combustible, :es_4x4, :categoria, :n_puertas, :a_c, :gps, :disponible, :costo_min, :costo_max)
+      params.require(:vehiculo).permit(:patente, :marca, :modelo, :anho, :color, :chasis, :n_motor, :kilometraje, :tipo_combustible, :es_4x4, :categoria, :n_puertas, :a_c, :gps, :disponible, :costo_min, :costo_max, :costo)
     end
 end
