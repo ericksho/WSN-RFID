@@ -83,10 +83,10 @@
 <%= link_to 'Editar', edit_vehiculo_path(@vehiculo) %> |
 <%= link_to 'Volver', vehiculos_path %>
 
-<%= image_tag(@image, width: '400') %>
+<%= image_tag(@image, width: '400', :id => "Image_Tag") %>
 
 <script>
-alert("Hola");
-	$.getJSON( "https://www.googleapis.com/customsearch/v1?key=AIzaSyAmNbCJMqQhBfUfW-rDiOc9O1OVBURqw6k&cx=000280892056063219607:nyce3z7od2g&q=citroen+c3&searchType=image&fileType=jpg&imgSize=small&alt=json", function( data ) {
+	$.getJSON( "https://www.googleapis.com/customsearch/v1?key=AIzaSyAmNbCJMqQhBfUfW-rDiOc9O1OVBURqw6k&cx=000280892056063219607:nyce3z7od2g&q=<%= @vehiculo.marca %>+<%= @vehiculo.modelo %>+<%= @vehiculo.color %>&searchType=image&fileType=jpg&imgSize=small&alt=json", function( data ) {
+    document.getElementById("Image_Tag").src = data["items"][0]["link"];
 	});
 </script>
