@@ -31,10 +31,12 @@ class LecturasController < ApplicationController
     #ApiKey
 
 	 articulo = Articulo.find_by_rfid(params[:Code].to_i)
+   lector = Lector.find_by_nombre(params[:ReaderName])
+
    if(not articulo)
       redirect_to root_path
    else 	
-      @lectura = Lectura.new(fecha: params[:ReadTime], articulo_id: articulo.id, lector_id: params[:ReaderId])
+      @lectura = Lectura.new(fecha: params[:ReadTime], articulo_id: articulo.id, lector_id: lector.id)
 	
 	     articulo.upr = @lectura.lector.posicion
 	     articulo.save
