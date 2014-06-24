@@ -35,7 +35,8 @@
           <%= f.label :cargo %>
           
 
-          <%= collection_select(:usuario, :cargo, Permiso.all.sort_by{|c| c[:titulo]}, :titulo, :titulo, :prompt => 'Seleccione un cargo', :selected => @permiso_selected , :class => "form-control", :value => @usuario.cargo) %>
+        <!--   <%= collection_select(:usuario, :cargo, Permiso.all.sort_by{|c| c[:titulo]}, :titulo, :titulo, :prompt => 'Seleccione un cargo', :selected => @permiso_selected , :class => "form-control", :value => @usuario.cargo) %> -->
+        <%= select("permiso_select", "id", Permiso.all.collect {|p| [ p.titulo, p.id ]}, :class => "form-control") %>
         </div>
       </div>
       <%= f.submit @label, :class => "btn btn-success" %>

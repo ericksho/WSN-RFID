@@ -3,7 +3,7 @@ require 'json'
 
 class VehiculosController < ApplicationController
   before_action :set_vehiculo, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authorize_vehiculo
   # GET /vehiculos
   # GET /vehiculos.json
   def index

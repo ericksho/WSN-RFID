@@ -1,6 +1,6 @@
 class PermisosController < ApplicationController
   before_action :set_permiso, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authorize_permiso
   # GET /permisos
   # GET /permisos.json
   def index

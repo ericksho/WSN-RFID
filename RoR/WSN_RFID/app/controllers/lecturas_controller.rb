@@ -1,5 +1,6 @@
 class LecturasController < ApplicationController
   before_action :set_lectura, only: [:show, :edit, :update, :destroy, :createPost]
+  before_filter :authorize_lectura, :except => [:createPost, :set_lectura]
   skip_before_filter :require_login, only: [:createPost, :set_lectura]
   protect_from_forgery :except => :createPost
   # GET /lecturas

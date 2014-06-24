@@ -1,7 +1,7 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
   skip_before_filter :require_login
-
+  before_filter :authorize_usuario
   
   # GET /usuarios
   # GET /usuarios.json
@@ -30,6 +30,7 @@ class UsuariosController < ApplicationController
   def create
     @usuario = Usuario.new(usuario_params)
     @permiso = Permiso.find(params[:permiso_select]['id'])
+    @usuario.cargo = @permiso.titulo
     respond_to do |format|
       if @usuario.save
         @usuario.permisos << @permiso
@@ -46,8 +47,13 @@ class UsuariosController < ApplicationController
   # PATCH/PUT /usuarios/1
   # PATCH/PUT /usuarios/1.json
   def update
+    @permiso = Permiso.find(params[:permiso_select]['id'])
+    @usuario.cargo = @permiso.titulo
     respond_to do |format|
       if @usuario.update(usuario_params)
+        @usuario.permisos.clear
+        @usuario.permisos << @permiso
+        @usuario.save!
         format.html { redirect_to usuarios_path, notice: 'Usuario fue actualizado.' }
         format.json { render :show, status: :ok, location: @usuario }
       else

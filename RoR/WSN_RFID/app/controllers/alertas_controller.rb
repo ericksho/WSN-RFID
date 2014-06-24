@@ -1,6 +1,8 @@
 class AlertasController < ApplicationController
   before_action :set_alerta, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorize_alerta
+
   # GET /alertas
   # GET /alertas.json
   def index

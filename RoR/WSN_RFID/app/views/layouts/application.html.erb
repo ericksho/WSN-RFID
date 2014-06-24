@@ -25,7 +25,9 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><%=link_to "Alertas", alertas_path %></li>
+          <% if alerta_access? %>
+            <li><%=link_to "Alertas", alertas_path %></li>
+          <% end %>
           <li><%=link_to current_user.nombre, current_user %></li>  
           <li><%=link_to "Cerrar sesión", session_path, method: :delete %></li>
           
@@ -41,13 +43,27 @@
          <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
            
             <ul class="nav nav-sidebar">
-              <li class="<%= 'active' if params[:controller] == 'personas' %>"> <%=link_to "Personas", personas_path %></li>
-              <li class="<%= 'active' if params[:controller] == 'vehiculos' %>"> <%=link_to "Vehículos", vehiculos_path %></li>
-              <li class="<%= 'active' if params[:controller] == 'articulos' %>"> <%=link_to "Artículos", articulos_path %></li>
-      				<li class="<%= 'active' if params[:controller] == 'lectors' %>"> <%=link_to "Lectores", lectors_path %></li>
-      				<li class="<%= 'active' if params[:controller] == 'lecturas' %>"> <%=link_to "Lecturas", lecturas_path %></li>
-      				<li class="<%= 'active' if params[:controller] == 'permisos' %>"> <%=link_to "Permisos", permisos_path %></li>
-      				<li class="<%= 'active' if params[:controller] == 'usuarios' %>"> <%=link_to "Usuarios", usuarios_path %></li>
+              <% if persona_access? %>
+                <li class="<%= 'active' if params[:controller] == 'personas' %>"> <%=link_to "Personas", personas_path %></li>
+              <% end%>
+              <% if vehiculo_access? %>
+                <li class="<%= 'active' if params[:controller] == 'vehiculos' %>"> <%=link_to "Vehículos", vehiculos_path %></li>
+              <% end%>
+              <% if articulo_access? %>
+                <li class="<%= 'active' if params[:controller] == 'articulos' %>"> <%=link_to "Artículos", articulos_path %></li>
+              <% end%>
+              <% if lector_access? %>
+      				  <li class="<%= 'active' if params[:controller] == 'lectors' %>"> <%=link_to "Lectores", lectors_path %></li>
+              <% end%>
+              <% if lectura_access? %>
+      				  <li class="<%= 'active' if params[:controller] == 'lecturas' %>"> <%=link_to "Lecturas", lecturas_path %></li>
+              <% end%>
+              <% if permiso_access? %>
+      				  <li class="<%= 'active' if params[:controller] == 'permisos' %>"> <%=link_to "Permisos", permisos_path %></li>
+              <% end%>
+              <% if usuario_access? %>
+      				  <li class="<%= 'active' if params[:controller] == 'usuarios' %>"> <%=link_to "Usuarios", usuarios_path %></li>
+              <% end%>
             </ul>
             <!-- <ul class="nav nav-sidebar">
               <li><a href="">Nav item</a></li>

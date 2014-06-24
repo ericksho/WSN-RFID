@@ -1,6 +1,7 @@
 class ArticulosController < ApplicationController
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authorize_articulo
+  
   # GET /articulos
   # GET /articulos.json
   def index
