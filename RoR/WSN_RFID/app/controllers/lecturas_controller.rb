@@ -30,12 +30,14 @@ class LecturasController < ApplicationController
   def createPost
     #ApiKey
 
-	articulo = Articulo.find_by_rfid(params[:Code].to_i)
+	 articulo = Articulo.find_by_rfid(params[:Code].to_i)
+   if(not articulo)
+      redirect_to root_path
+   else 	
+      @lectura = Lectura.new(fecha: params[:ReadTime], articulo_id: articulo.id, lector_id: params[:ReaderId])
 	
-    @lectura = Lectura.new(fecha: params[:ReadTime], articulo_id: articulo.id, lector_id: params[:ReaderId])
-	
-	articulo.upr = @lectura.lector.posicion
-	articulo.save
+	     articulo.upr = @lectura.lector.posicion
+	     articulo.save
 
     respond_to do |format|
       if @lectura.save
@@ -46,6 +48,7 @@ class LecturasController < ApplicationController
         format.json { render json: @lectura.errors, status: :unprocessable_entity }
       end
     end
+  end
   end
 
   # POST /lecturas
