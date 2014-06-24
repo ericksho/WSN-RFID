@@ -10,13 +10,13 @@ namespace CSharpRFIDDemo
     {
         private string HostAddress = "";
         private string ApiKey = "";
-        private int ReaderId;
+        private String ReaderName;
 
-        public ConnectionManager(string HostAddress, String ApiKey, int ReaderId)
+        public ConnectionManager(string HostAddress, String ApiKey, String ReaderName)
         {
             this.HostAddress = HostAddress;
             this.ApiKey = ApiKey;
-            this.ReaderId = ReaderId;
+            this.ReaderName = ReaderName;
         }
 
         public void SendReadReport(string Code, DateTime ReadTime)
@@ -25,7 +25,7 @@ namespace CSharpRFIDDemo
             {
                 var data = new NameValueCollection();
                 data["ApiKey"] = ApiKey;
-                data["ReaderId"] = ReaderId.ToString();
+                data["ReaderName"] = ReaderName;
                 data["Code"] = Code;
                 data["ReadTime"] = ReadTime.ToString();
 

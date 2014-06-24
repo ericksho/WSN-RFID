@@ -40,29 +40,30 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listViewCard = new System.Windows.Forms.ListView();
+            this.colCardNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colLastTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.readerSerial = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.readerPort = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.readerPower = new System.Windows.Forms.ComboBox();
+            this.readerIP = new System.Windows.Forms.TextBox();
+            this.readerModel = new System.Windows.Forms.TextBox();
+            this.readerName = new System.Windows.Forms.TextBox();
+            this.readerID = new System.Windows.Forms.TextBox();
+            this.office = new System.Windows.Forms.TextBox();
+            this.company = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.company = new System.Windows.Forms.TextBox();
-            this.office = new System.Windows.Forms.TextBox();
-            this.readerID = new System.Windows.Forms.TextBox();
-            this.readerName = new System.Windows.Forms.TextBox();
-            this.readerModel = new System.Windows.Forms.TextBox();
-            this.readerIP = new System.Windows.Forms.TextBox();
-            this.readerPower = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.readerPort = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.readerSerial = new System.Windows.Forms.TextBox();
-            this.listViewCard = new System.Windows.Forms.ListView();
-            this.colCardNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colLastTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timerUpdateListView = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CSPicture)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -174,6 +175,30 @@
             this.tabPage1.Text = "Lecturas Recientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // listViewCard
+            // 
+            this.listViewCard.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colCardNumber,
+            this.colLastTime});
+            this.listViewCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewCard.FullRowSelect = true;
+            this.listViewCard.Location = new System.Drawing.Point(3, 3);
+            this.listViewCard.Name = "listViewCard";
+            this.listViewCard.Size = new System.Drawing.Size(576, 401);
+            this.listViewCard.TabIndex = 5;
+            this.listViewCard.UseCompatibleStateImageBehavior = false;
+            this.listViewCard.View = System.Windows.Forms.View.Details;
+            // 
+            // colCardNumber
+            // 
+            this.colCardNumber.Text = "ID";
+            this.colCardNumber.Width = 169;
+            // 
+            // colLastTime
+            // 
+            this.colLastTime.Text = "Fecha y Hora";
+            this.colLastTime.Width = 131;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.readerSerial);
@@ -201,6 +226,104 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Configuración";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // readerSerial
+            // 
+            this.readerSerial.Enabled = false;
+            this.readerSerial.Location = new System.Drawing.Point(154, 169);
+            this.readerSerial.Name = "readerSerial";
+            this.readerSerial.Size = new System.Drawing.Size(422, 20);
+            this.readerSerial.TabIndex = 17;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 170);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(142, 16);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Serial del Lector RFID:";
+            // 
+            // readerPort
+            // 
+            this.readerPort.Location = new System.Drawing.Point(158, 229);
+            this.readerPort.Name = "readerPort";
+            this.readerPort.Size = new System.Drawing.Size(418, 20);
+            this.readerPort.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 230);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(146, 16);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Puerto del Lector RFID:";
+            // 
+            // readerPower
+            // 
+            this.readerPower.FormattingEnabled = true;
+            this.readerPower.Location = new System.Drawing.Point(172, 259);
+            this.readerPower.Name = "readerPower";
+            this.readerPower.Size = new System.Drawing.Size(404, 21);
+            this.readerPower.TabIndex = 13;
+            // 
+            // readerIP
+            // 
+            this.readerIP.Location = new System.Drawing.Point(131, 199);
+            this.readerIP.Name = "readerIP";
+            this.readerIP.Size = new System.Drawing.Size(445, 20);
+            this.readerIP.TabIndex = 12;
+            this.readerIP.TextChanged += new System.EventHandler(this.readerIP_TextChanged);
+            // 
+            // readerModel
+            // 
+            this.readerModel.Enabled = false;
+            this.readerModel.Location = new System.Drawing.Point(165, 139);
+            this.readerModel.Name = "readerModel";
+            this.readerModel.Size = new System.Drawing.Size(411, 20);
+            this.readerModel.TabIndex = 11;
+            // 
+            // readerName
+            // 
+            this.readerName.Location = new System.Drawing.Point(168, 109);
+            this.readerName.Name = "readerName";
+            this.readerName.Size = new System.Drawing.Size(408, 20);
+            this.readerName.TabIndex = 10;
+            this.readerName.TextChanged += new System.EventHandler(this.readerName_TextChanged);
+            // 
+            // readerID
+            // 
+            this.readerID.Location = new System.Drawing.Point(132, 80);
+            this.readerID.Name = "readerID";
+            this.readerID.Size = new System.Drawing.Size(444, 20);
+            this.readerID.TabIndex = 9;
+            // 
+            // office
+            // 
+            this.office.Location = new System.Drawing.Point(75, 39);
+            this.office.Name = "office";
+            this.office.Size = new System.Drawing.Size(501, 20);
+            this.office.TabIndex = 8;
+            // 
+            // company
+            // 
+            this.company.Location = new System.Drawing.Point(81, 9);
+            this.company.Name = "company";
+            this.company.Size = new System.Drawing.Size(495, 20);
+            this.company.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 260);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(160, 16);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Potencia del Lector RFID:";
             // 
             // label8
             // 
@@ -262,131 +385,15 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Empresa:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 260);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(160, 16);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Potencia del Lector RFID:";
-            // 
-            // company
-            // 
-            this.company.Location = new System.Drawing.Point(81, 9);
-            this.company.Name = "company";
-            this.company.Size = new System.Drawing.Size(495, 20);
-            this.company.TabIndex = 7;
-            // 
-            // office
-            // 
-            this.office.Location = new System.Drawing.Point(75, 39);
-            this.office.Name = "office";
-            this.office.Size = new System.Drawing.Size(501, 20);
-            this.office.TabIndex = 8;
-            // 
-            // readerID
-            // 
-            this.readerID.Location = new System.Drawing.Point(132, 80);
-            this.readerID.Name = "readerID";
-            this.readerID.Size = new System.Drawing.Size(444, 20);
-            this.readerID.TabIndex = 9;
-            // 
-            // readerName
-            // 
-            this.readerName.Location = new System.Drawing.Point(168, 109);
-            this.readerName.Name = "readerName";
-            this.readerName.Size = new System.Drawing.Size(408, 20);
-            this.readerName.TabIndex = 10;
-            // 
-            // readerModel
-            // 
-            this.readerModel.Enabled = false;
-            this.readerModel.Location = new System.Drawing.Point(165, 139);
-            this.readerModel.Name = "readerModel";
-            this.readerModel.Size = new System.Drawing.Size(411, 20);
-            this.readerModel.TabIndex = 11;
-            // 
-            // readerIP
-            // 
-            this.readerIP.Location = new System.Drawing.Point(131, 199);
-            this.readerIP.Name = "readerIP";
-            this.readerIP.Size = new System.Drawing.Size(445, 20);
-            this.readerIP.TabIndex = 12;
-            this.readerIP.TextChanged += new System.EventHandler(this.readerIP_TextChanged);
-            // 
-            // readerPower
-            // 
-            this.readerPower.FormattingEnabled = true;
-            this.readerPower.Location = new System.Drawing.Point(172, 259);
-            this.readerPower.Name = "readerPower";
-            this.readerPower.Size = new System.Drawing.Size(404, 21);
-            this.readerPower.TabIndex = 13;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 230);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(146, 16);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Puerto del Lector RFID:";
-            // 
-            // readerPort
-            // 
-            this.readerPort.Location = new System.Drawing.Point(158, 229);
-            this.readerPort.Name = "readerPort";
-            this.readerPort.Size = new System.Drawing.Size(418, 20);
-            this.readerPort.TabIndex = 15;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 170);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 16);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Serial del Lector RFID:";
-            // 
-            // readerSerial
-            // 
-            this.readerSerial.Enabled = false;
-            this.readerSerial.Location = new System.Drawing.Point(154, 169);
-            this.readerSerial.Name = "readerSerial";
-            this.readerSerial.Size = new System.Drawing.Size(422, 20);
-            this.readerSerial.TabIndex = 17;
-            // 
-            // listViewCard
-            // 
-            this.listViewCard.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colCardNumber,
-            this.colLastTime});
-            this.listViewCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewCard.FullRowSelect = true;
-            this.listViewCard.Location = new System.Drawing.Point(3, 3);
-            this.listViewCard.Name = "listViewCard";
-            this.listViewCard.Size = new System.Drawing.Size(576, 401);
-            this.listViewCard.TabIndex = 5;
-            this.listViewCard.UseCompatibleStateImageBehavior = false;
-            this.listViewCard.View = System.Windows.Forms.View.Details;
-            // 
-            // colCardNumber
-            // 
-            this.colCardNumber.Text = "ID";
-            this.colCardNumber.Width = 169;
-            // 
-            // colLastTime
-            // 
-            this.colLastTime.Text = "Fecha y Hora";
-            this.colLastTime.Width = 131;
-            // 
             // timerUpdateListView
             // 
             this.timerUpdateListView.Enabled = true;
             this.timerUpdateListView.Tick += new System.EventHandler(this.timerUpdateListView_Tick);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Home
             // 
@@ -457,6 +464,7 @@
         public System.Windows.Forms.ColumnHeader colLastTime;
         public System.Windows.Forms.ColumnHeader colCardNumber;
         private System.Windows.Forms.Timer timerUpdateListView;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }

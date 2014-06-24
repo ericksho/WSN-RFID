@@ -52,6 +52,8 @@ namespace CSharpRFIDDemo
 
         public static byte[] sSysInfoLen = new byte[] { 8, 6, 8, 4, 4, 4, 4 };
 
+        private Dictionary<String, int> ignoreMemory = new Dictionary<string, int>();
+
         #endregion
 
         public Home()
@@ -64,6 +66,8 @@ namespace CSharpRFIDDemo
         private void Home_Load(object sender, EventArgs e)
         {
             Control.CheckForIllegalCrossThreadCalls = false;
+
+            timer1.Start();
 
             readerIP.Text = sReaderIP;
             readerPort.Text = iReaderPoint.ToString();
@@ -339,8 +343,8 @@ namespace CSharpRFIDDemo
         {
             int nRevMsgResult = 0;
 
-            ConnectionManager cm = new ConnectionManager("http://wsn-rfid.herokuapp.com", "ApiKey", 1);
-
+            ConnectionManager cm = new ConnectionManager("http://wsn-rfid.herokuapp.com", "ApiKey", this.readerModel.Text.Trim() + "-" + this.readerSerial.Text.Trim());
+            Console.WriteLine(this.readerModel.Text + "-" + this.readerSerial.Text);
             RevMsgStruct revMsg = new RevMsgStruct();
             int dwStart = System.Environment.TickCount;
             bool bConnectIsOK = false;
@@ -351,7 +355,15 @@ namespace CSharpRFIDDemo
                 {
                     bConnectIsOK = true;
                     revMsgLine.RevMsgAdd(revMsg);
-                    cm.SendReadReport(revMsg.sCodeData.ToString(), revMsg.tLastTime);
+                    if (!ignoreMemory.ContainsKey(revMsg.sCodeData.ToString()))
+                    {
+                        ignoreMemory.Add(revMsg.sCodeData.ToString(), 10);
+                        cm.SendReadReport(revMsg.sCodeData.ToString(), revMsg.tLastTime);
+                    }
+                    else
+                    {
+                        ignoreMemory[revMsg.sCodeData.ToString()] = 10;
+                    }
                     ShowResult(Win32.BeepType.Success);
                 }
                 else if (nRevMsgResult == 2)
@@ -413,11 +425,9 @@ namespace CSharpRFIDDemo
 
         private void timerUpdateListView_Tick(object sender, EventArgs e)
         {
+            listViewCard.Items.Clear();
             for (int i = 0; i < revMsgLine.TagCount; i++)
             {
-
-                listViewCard.Items.Clear();
-                
                 listViewCard.Items.Add(revMsgLine.Get(i).sCodeData.ToString());
                 listViewCard.Items[i].SubItems.Add(revMsgLine.Get(i).tLastTime.ToString("dd/MM/yy HH:mm:ss"));
             }
@@ -435,6 +445,22 @@ namespace CSharpRFIDDemo
                 sErrorMsg = Encoding.Default.GetString(btErrorMsg);
             }
             return "Error: " + sErrorMsg;
+        }
+
+        private void readerName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            List<string> keys = new List<string>();
+            keys.AddRange(ignoreMemory.Keys);
+            foreach (string k in keys)
+            {
+                ignoreMemory[k] = ignoreMemory[k] - 1;
+                if (ignoreMemory[k] <= 0) ignoreMemory.Remove(k);
+            }
         }
 
 
