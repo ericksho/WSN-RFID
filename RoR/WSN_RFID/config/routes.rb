@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :horario_alarmas
+
+  resources :pushbullets
+
   resources :personas
 
   resources :vehiculos

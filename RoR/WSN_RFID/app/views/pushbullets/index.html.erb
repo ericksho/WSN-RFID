@@ -1,0 +1,29 @@
+<h1>Listado de tokens actuales para Pushbullets</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Email</th>
+      <th>Motivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pushbullets.each do |pushbullet| %>
+      <tr>
+        <td><%= pushbullet.token %></td>
+        <td><%= pushbullet.email %></td>
+        <td><%= pushbullet.motivo %></td>
+        <td><%= link_to 'Ver', pushbullet, :class => "btn btn-primary btn-xs"  %></td>
+        <td><%= link_to 'Editar', pushbullet, :class => "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Eliminar', pushbullet, method: :delete, data: { confirm: 'Esta seguro de eliminar?' }, :class => "btn btn-danger btn-xs"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear Token', new_pushbullet_path, :class => "btn btn-primary" %>

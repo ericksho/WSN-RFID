@@ -1,0 +1,29 @@
+<h1>Listing horario_alarmas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hora inicio</th>
+      <th>Hora fin</th>
+      <th>Motivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @horario_alarmas.each do |horario_alarma| %>
+      <tr>
+        <td><%= horario_alarma.hora_inicio %></td>
+        <td><%= horario_alarma.hora_fin %></td>
+        <td><%= horario_alarma.motivo %></td>
+        <td><%= link_to 'Show', horario_alarma %></td>
+        <td><%= link_to 'Edit', edit_horario_alarma_path(horario_alarma) %></td>
+        <td><%= link_to 'Destroy', horario_alarma, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Horario alarma', new_horario_alarma_path %>

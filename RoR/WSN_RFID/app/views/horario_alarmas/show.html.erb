@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hora inicio:</strong>
+  <%= @horario_alarma.hora_inicio %>
+</p>
+
+<p>
+  <strong>Hora fin:</strong>
+  <%= @horario_alarma.hora_fin %>
+</p>
+
+<p>
+  <strong>Motivo:</strong>
+  <%= @horario_alarma.motivo %>
+</p>
+
+<%= link_to 'Edit', edit_horario_alarma_path(@horario_alarma) %> |
+<%= link_to 'Back', horario_alarmas_path %>

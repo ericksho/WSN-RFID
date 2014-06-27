@@ -1,0 +1,33 @@
+<%= form_for(@pushbullet) do |f| %>
+  <% if @pushbullet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pushbullet.errors.count, "error") %> prohibited this pushbullet from being saved:</h2>
+
+      <ul>
+      <% @pushbullet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+  <div class="col-md-6 column">
+    <div class="field">
+      <%= f.label :token %><br>
+      <%= f.text_field :token, :class => "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, :class => "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :motivo %><br>
+      <%= f.text_field :motivo, :class => "form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit @label, :class => "btn btn-success" %>
+    </div>
+  </div>
+</div>
+<% end %>

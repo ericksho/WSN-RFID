@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @pushbullet.token %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @pushbullet.email %>
+</p>
+
+<p>
+  <strong>Motivo:</strong>
+  <%= @pushbullet.motivo %>
+</p>
+
+<%= link_to 'Editar', edit_pushbullet_path(@pushbullet), :class => "btn btn-warning" %> |
+<%= link_to 'Volver', pushbullets_path, :class => "btn btn-default" %>

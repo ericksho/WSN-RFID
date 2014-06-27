@@ -1,0 +1,29 @@
+<%= form_for(@horario_alarma) do |f| %>
+  <% if @horario_alarma.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@horario_alarma.errors.count, "error") %> prohibited this horario_alarma from being saved:</h2>
+
+      <ul>
+      <% @horario_alarma.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hora_inicio %><br>
+    <%= f.number_field :hora_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :hora_fin %><br>
+    <%= f.number_field :hora_fin %>
+  </div>
+  <div class="field">
+    <%= f.label :motivo %><br>
+    <%= f.text_field :motivo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

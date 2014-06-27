@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hora_inicio: 1
+  hora_fin: 1
+  motivo: MyString
+
+two:
+  hora_inicio: 1
+  hora_fin: 1
+  motivo: MyString

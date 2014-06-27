@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623063012) do
+ActiveRecord::Schema.define(version: 20140626223824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,21 @@ ActiveRecord::Schema.define(version: 20140623063012) do
   end
 
   add_index "atributos", ["articulo_id"], name: "index_atributos_on_articulo_id", using: :btree
+
+  create_table "configuracions", force: true do |t|
+    t.string   "atributo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "valor"
+  end
+
+  create_table "horario_alarmas", force: true do |t|
+    t.integer  "hora_inicio"
+    t.integer  "hora_fin"
+    t.string   "motivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "lectors", force: true do |t|
     t.string   "posicion"
@@ -103,6 +118,14 @@ ActiveRecord::Schema.define(version: 20140623063012) do
     t.integer  "celular"
     t.date     "fecha_nacimiento"
     t.string   "cargo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pushbullets", force: true do |t|
+    t.string   "token"
+    t.string   "email"
+    t.string   "motivo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
