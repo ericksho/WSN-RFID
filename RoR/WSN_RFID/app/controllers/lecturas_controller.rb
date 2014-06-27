@@ -3,6 +3,7 @@ class LecturasController < ApplicationController
   before_filter :authorize_lectura, :except => [:createPost, :set_lectura]
   skip_before_filter :require_login, only: [:createPost, :set_lectura]
   protect_from_forgery :except => :createPost
+  
   # GET /lecturas
   # GET /lecturas.json
   def index
@@ -41,16 +42,16 @@ class LecturasController < ApplicationController
 	     articulo.upr = @lectura.lector.posicion
 	     articulo.save
 
-    respond_to do |format|
-      if @lectura.save
-        format.html { redirect_to lecturas_path, notice: 'Lectura creada con éxito.' }
-        format.json { render :show, status: :created, location: @lectura }
-      else
-        format.html { render :new }
-        format.json { render json: @lectura.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @lectura.save
+          format.html { redirect_to lecturas_path, notice: 'Lectura creada con éxito.' }
+          format.json { render :show, status: :created, location: @lectura }
+        else
+          format.html { render :new }
+          format.json { render json: @lectura.errors, status: :unprocessable_entity }
+        end
       end
     end
-  end
   end
 
   # POST /lecturas

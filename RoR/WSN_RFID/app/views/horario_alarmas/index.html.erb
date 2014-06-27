@@ -1,10 +1,10 @@
-<h1>Listing horario_alarmas</h1>
+<h1>Horarios de alarmas</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Hora inicio</th>
-      <th>Hora fin</th>
+      <th>Hora de Inicio</th>
+      <th>Hora de Fin</th>
       <th>Motivo</th>
       <th colspan="3"></th>
     </tr>
@@ -13,12 +13,12 @@
   <tbody>
     <% @horario_alarmas.each do |horario_alarma| %>
       <tr>
-        <td><%= horario_alarma.hora_inicio %></td>
-        <td><%= horario_alarma.hora_fin %></td>
+        <td><%= horario_alarma.hora_inicio.to_s + ':' + horario_alarma.fraccion_inicio.to_s %></td>
+        <td><%= horario_alarma.hora_fin.to_s + ':' + horario_alarma.fraccion_fin.to_s %></td>
         <td><%= horario_alarma.motivo %></td>
-        <td><%= link_to 'Show', horario_alarma %></td>
-        <td><%= link_to 'Edit', edit_horario_alarma_path(horario_alarma) %></td>
-        <td><%= link_to 'Destroy', horario_alarma, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', horario_alarma, :class => "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Editar', edit_horario_alarma_path(horario_alarma), :class => "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Eliminar', horario_alarma, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Horario alarma', new_horario_alarma_path %>
+<%= link_to 'Agregar Nuevo Horario para Alarma', new_horario_alarma_path, :class => "btn btn-primary" %>

@@ -30,7 +30,6 @@ class AlertasController < ApplicationController
 
     respond_to do |format|
       if @alerta.save
-        @alerta.pushAlert
         format.html { redirect_to @alerta, notice: 'Alerta was successfully created.' }
         format.json { render :show, status: :created, location: @alerta }
       else

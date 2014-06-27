@@ -2,12 +2,12 @@
 
 <p>
   <strong>Hora inicio:</strong>
-  <%= @horario_alarma.hora_inicio %>
+  <%= @horario_alarma.hora_inicio.to_s + ':' + @horario_alarma.fraccion_inicio.to_s %>
 </p>
 
 <p>
   <strong>Hora fin:</strong>
-  <%= @horario_alarma.hora_fin %>
+  <%= @horario_alarma.hora_fin.to_s + ':' + @horario_alarma.fraccion_fin.to_s %>
 </p>
 
 <p>
@@ -15,5 +15,5 @@
   <%= @horario_alarma.motivo %>
 </p>
 
-<%= link_to 'Edit', edit_horario_alarma_path(@horario_alarma) %> |
-<%= link_to 'Back', horario_alarmas_path %>
+<%= link_to 'Editar', edit_horario_alarma_path(@horario_alarma), :class => "btn btn-warning" %> |
+<%= link_to 'Volver', horario_alarmas_path, :class => "btn btn-default"  %>

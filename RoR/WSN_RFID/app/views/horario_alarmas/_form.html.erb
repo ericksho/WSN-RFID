@@ -11,19 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :hora_inicio %><br>
-    <%= f.number_field :hora_inicio %>
-  </div>
-  <div class="field">
-    <%= f.label :hora_fin %><br>
-    <%= f.number_field :hora_fin %>
-  </div>
-  <div class="field">
-    <%= f.label :motivo %><br>
-    <%= f.text_field :motivo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="form-inline">
+    <div class="form-group">
+      <%= f.label :hora_inicio%> (Formato de 24 hrs)</br>
+      <%= f.number_field :hora_inicio, :class => "form-control", :max => 24, :min => 0%>
+    </div>
+    <div class="form-group">
+      <%= f.label :minutos %> 
+      <%= f.number_field :fraccion_inicio, :class => "form-control", :max => 60, :min => 0%>
+    </div>
+</div>
+<div class="form-inline">
+    <div class="form-group">
+      <%= f.label :hora_final %> (Formato de 24 hrs.)</br>
+      <%= f.number_field :hora_fin, :class => "form-control", :max => 24, :min => 0%>
+    </div>
+    <div class="form-group">
+      <%= f.label :minutos %><br>
+      <%= f.number_field :fraccion_fin, :class => "form-control", :max => 60, :min => 0%>
+    </div>
+</div>
+<div class="form-inline">
+    <div class="form-group">
+      <%= f.label :motivo %><br>
+      <%= f.text_field :motivo, :class => "form-control" %>
+    </div>
+</div>
+</br>
+<div class="form-inline">
+    <div class="actions">
+      <%= f.submit @label, :class => "btn btn-success" %>
+    </div>
+</div>
 <% end %>
